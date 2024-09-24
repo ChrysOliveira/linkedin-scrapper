@@ -1,0 +1,5 @@
+"decorationType": "LINE_SEPARATED" Opcao de chave para descobrir qual index do included possui as infos gerais (nao cargos em lista)
+
+PROF REDES:
+included[2].entityUrn
+included[1].decorationType

@@ -1,0 +1,47 @@
+//            URI uri = new URI("https://www.linkedin.com/voyager/api/graphql?variables=(start:0,origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:educationEndYear,value:List(2010)),(key:educationStartYear,value:List(2010)),(key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.b67807cb32b49b40ee7d5f5e2310d071");
+//
+//            // Criar cliente HTTP
+//            CloseableHttpClient httpClient = HttpClients.createDefault();
+//
+//            // Criar requisição HTTP GET
+//            ClassicHttpRequest request = new HttpGet(uri);
+//
+//            // Adicionar cabeçalhos
+//            request.addHeader("accept", "application/vnd.linkedin.normalized+json+2.1");
+//            request.addHeader("accept-language", "en-US,en;q=0.9");
+//            request.addHeader("cookie", "li_sugr=da711fdf-02ee-4360-8107-0c07e01a7bf3; bcookie=\"v=2&f2bbf1fa-4a7f-43aa-8a16-683668c2a0df\"; bscookie=\"v=1&202403030327183119243c-2e7d-495c-88ec-d004e0d9d52fAQH8-wcxKqdZJwQkkmiQsm2f-Q5eLrBE\"; liap=true; JSESSIONID=\"ajax:8907066025362885714\"; dfpfpt=d7bb7bb336bb4187808e534f5cf6a9b0; _guid=11a16972-a033-4bb2-8949-decf8d5fbea7; timezone=America/Sao_Paulo; aam_uuid=54463982240535855220170445279582010727; s_fid=0F41D431F53AB300-1913CC92C790B7BB; mbox=session#4b16a684122443f89f63b87912e63268#1724527047|PC#4b16a684122443f89f63b87912e63268.34_0#1740077187; VID=V_2024_08_24_18_11754; _gcl_au=1.1.2127996640.1724701274; _uetvid=272a2dc063e311efb214c5152fb2d674; gpv_pn=www.linkedin.com%2Fbusiness%2Ftalent%2Fblog%2Fproduct-tips%2Frecruiters-with-eye-catching-linkedin-profile-headlines; s_ips=1442; s_tp=8171; s_tslv=1724701455367; lang=v=2&lang=en-us; AMCVS_14215E3D5995C57C0A495C55%40AdobeOrg=1; sdsc=1%3A1SZM1shxDNbLt36wZwCgPgvN58iw%3D; li_at=AQEDAS7YFPIDxm3OAAABjhSnMckAAAGR5p9TvVYAymT6gQB2FD099u7XqxSwC3jlNTVmxPtignEzHagdN06vwFcMhsDzIA2Dz_XdlY5C1bWkMcYcGyTI1qe1CSCsrQhHSjXa4HAetqEBXgaR3BA09LkN; AnalyticsSyncHistory=AQIPbz0Kl2jo7wAAAZHH2fsspToqQipzV0H75G0uEKQmto0au6kCZjcMZP7GIX066ACPyZ8cIMY6FpjWzzcRsA; lms_ads=AQFKryHBpX7VtgAAAZHH2fwmnZRpPwETHjGH5JUjkwfkr_0aV4VOGP-KRgddE5CMQ8z1X-kgODiIGqHlwJYWGPtqfUG1xy3Y; lms_analytics=AQFKryHBpX7VtgAAAZHH2fwmnZRpPwETHjGH5JUjkwfkr_0aV4VOGP-KRgddE5CMQ8z1X-kgODiIGqHlwJYWGPtqfUG1xy3Y; li_theme_set=user; li_theme=system; fptctx2=taBcrIH61PuCVH7eNCyH0CYjjbqLuI8XF8pleSQW5NYUnBbYzpneOZ6fndMbFra0OLcc7WRVrS%252fTZs7ODZ89Vuv4HHeItpUbULWMRLLz1E3%252b64UNxdNNE4zyj7icAwLND7L3r28nH4p6eH5xFUagAhq1%252fL4cdg%252b5yePmj0wnWLjR86e%252bqQ2Q1A7zvU4pbRjqPQKy1vnrz%252by0SS24H2UwURtTSuNjuW87uli77u0kME9SxkIEpncLiDcty217xA9oocdzUp%252f310ebWZz8f5wDTxnGw6sMvn3zSqUQEtMjIvJZb67LIJLJdvhpEMrFGPt5QnWM53uCz2tvy%252byiIqym422CJkEqOPAoUZKWISSt%252bSk%253d; AMCV_14215E3D5995C57C0A495C55%40AdobeOrg=-637568504%7CMCIDTS%7C19975%7CMCMID%7C54297418106684512570185391028995509932%7CMCAAMLH-1726433235%7C4%7CMCAAMB-1726433235%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1725835635s%7CNONE%7CMCCIDH%7C-995869300%7CvVersion%7C5.1.1; UserMatchHistory=AQLu1i47uTwW3wAAAZHTZ_Ub55pOiGXa4YUdaMKghkZedwM3tIFKYdbpMQYOzeub-lfhvV-Dm1SkX_AVIqISpdLzahm7Ewe1CofnZmdHJ0cvsrtd9oLcaX3vCV8uG2qwxDcpH8841UxXGx8kNGeWbCMBuFvAO3OVY4LWvq-yQsNv63wOiGp5iHAD24gsmzP9WhJ9Ny-BRje8UL0F-a8k8Hl9eJtyNVjuL0cr2owqBl-vfioow52HcuChA0bIs7q7MTMv2rjceY_FcauLqn--WA1HJ65KlxCgXopmv7h6kXe7I_KxL5UMAgg56Jne-BHsrbTMr6sn27FHzIsqUJohh41cygFl72b7QS2mWgDuOPr_bVKcag; lidc=\"b=VB74:s=V:r=V:a=V:p=V:g=4704:u=138:x=1:i=1725828692:t=1725913837:v=2:sig=AQF5eY2gLDg1os8WnJKxAKJxsEotx2dt\"; __cf_bm=cYhOIYBphQBPI8TMEvhvjK00XpffSUgHyZ21tHx141A-1726782875-1.0.1.1-XE6U1fna_DYCZ_1L78pn1LY8by8jGJw4bNDp5_ELRqWGwd2TkpX4MhRqLaaW1I2GAt5n_05NuQ1Kw_5jdtjnIQ; bcookie=\"v=2&f2bbf1fa-4a7f-43aa-8a16-683668c2a0df\"; liap=true; lidc=\"b=TB74:s=T:r=T:a=T:p=T:g=5220:u=147:x=1:i=1726782911:t=1726784479:v=2:sig=AQHuGSxpJN3eDYM882dMwCO7krNn7QKT\"; JSESSIONID=\"ajax:8907066025362885714\"; li_at=AQEDAS7YFPIDxm3OAAABjhSnMckAAAGSMAGa-VYAb3xo-P9SivSOyIMGJEu7R0uiYi_GIBIaUQJ8cEkZYw1ANHJDXkGv4l8FCi2F7XVjO6B_nJzNUeL9vBtJdV6UZMqaLH1jhTUBiVOEq8DcAKSm0ndd");
+//            request.addHeader("csrf-token", "ajax:8907066025362885714");
+//            request.addHeader("dnt", "1");
+//            request.addHeader("priority", "u=1, i");
+//            request.addHeader("referer", "https://www.linkedin.com/school/centrouniversitariosenac/people/?educationEndYear=2010&educationStartYear=2010");
+//            request.addHeader("sec-ch-ua", "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"");
+//            request.addHeader("sec-ch-ua-mobile", "?0");
+//            request.addHeader("sec-ch-ua-platform", "\"Linux\"");
+//            request.addHeader("sec-fetch-dest", "empty");
+//            request.addHeader("sec-fetch-mode", "cors");
+//            request.addHeader("sec-fetch-site", "same-origin");
+//            request.addHeader("user-agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36");
+//            request.addHeader("x-li-lang", "en_US");
+//            request.addHeader("x-li-page-instance", "urn:li:page:d_flagship3_university;wTW0oJ+aSmOJmLWGbErC2A==");
+//            request.addHeader("x-li-pem-metadata", "Voyager - Organization - Member=organization-people-card");
+//            request.addHeader("x-li-track", "{\"clientVersion\":\"1.13.22711\",\"mpVersion\":\"1.13.22711\",\"osName\":\"web\",\"timezoneOffset\":-3,\"timezone\":\"America/Sao_Paulo\",\"deviceFormFactor\":\"DESKTOP\",\"mpName\":\"voyager-web\",\"displayDensity\":1,\"displayWidth\":1920,\"displayHeight\":1080}");
+//            request.addHeader("x-restli-protocol-version", "2.0.0");
+//            request.addHeader("Postman-Token", UUID.randomUUID().toString());
+//            request.addHeader("Host", "www.linkedin.com");
+//            request.addHeader("Accept-Encoding", "gzip, deflate, br");
+//            request.addHeader("Connection", "keep-alive");
+//
+//            for (var valor : request.getHeaders()) {
+//                System.out.println(String.format("%s: %s", valor.getName(), valor.getValue()));
+//            }
+//
+//            // Enviar requisição e obter resposta
+//            CloseableHttpResponse response = httpClient.execute(request);
+//
+//            // Converter a resposta em string e imprimir
+//            String responseBody = EntityUtils.toString(response.getEntity());
+//            System.out.println(responseBody);
+//
+//            // Fechar resposta e cliente
+//            response.close();
+//            httpClient.close();

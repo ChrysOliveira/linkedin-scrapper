@@ -1,0 +1,32 @@
+steps to get experience/education information:
+
+for year in [2000...2024]:
+for (int i = 0; i < 1000; i = i+10)
+
+- [GET] in list of peoples:
+
+    REQ: https://www.linkedin.com/voyager/api/graphql?variables=(start:12,origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:true),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c
+
+    - the "included" object in the response has fields equals to 3 times the size of the "count" in the query. We must divide the fields in 3 parts and select only the second to do the next step
+    - for each value in the second list "included"
+        - get the value of field "navigationUrl" (if it's null, skip)
+        - split the info from index 0 to the first "?" char -> link of the profile
+        - split the last 40 chars -> profile ID (linkedin id)
+        - get field "title" -> get field text -> name
+
+Once we have the linkedin ID in the hands, we can get details of the experience and education sections:
+
+- [GET] REQ: https://www.linkedin.com/voyager/api/graphql?includeWebMetadata=false&variables=(profileUrn:urn%3Ali%3Afsd_profile%3{linkedin id},sectionType:{experience|education},locale:en_US)&queryId=voyagerIdentityDashProfileComponents.0450707c9d2cb4d18be884710c0bceb5
+
+    experience:
+        - list of experiences: included[0].components.elements
+            - for each element:
+                - go to "components" -> "entityComponent":
+                    - COMPANY: included[0].components.elements[0].components.entityComponent.subtitle.text (formato: <nome da empresa> · <carga horaria> FAZER SPLIT DA PRIMEIRA PARTE)
+                    - WORKLOAD: included[0].components.elements[0].components.entityComponent.subtitle.text (formato: <nome da empresa> · <carga horaria> FAZER SPLIT DA SEGUNDA PARTE)
+                    - PERIOD: included[0].components.elements[0].components.entityComponent.caption.text (formato: <inicio> - <fim> · <tamanho periodo> VALORES DESCRITIVOS)
+                    - LOCATION: included[0].components.elements[0].components.entityComponent.metadata.text (formato: <Cidade>, <Estado>, <Pais> · <formato trabalho PRESENCIAL, REMOTO>)
+                    - DESCRIPTION: included[0].components.elements[1].components.entityComponent.subComponents.components[0].components.fixedListComponent.components[0].components.textComponent.text.text (para pegar a descricao na ordem, mexemos no index do elements[i])
+    education:
+
+    skills:

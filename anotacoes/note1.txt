@@ -1,0 +1,22 @@
+GUILHEME:
+descfinal:
+included[1].components.elements[2].components.entityComponent.subComponents.components[0].components.fixedListComponent.components[0].components.textComponent.text.text
+
+development manager:
+included[1].components.elements[2].components.entityComponent.titleV2.text.text
+
+Gerente de desenvolvimento:
+included[1].components.elements[1].components.entityComponent.titleV2.text.text
+
+CTO:
+cargo: included[1].components.elements[0].components.entityComponent.titleV2.text.text
+periodo: included[1].components.elements[0].components.entityComponent.caption.text
+
+infos gerais: 
+included[0].components.elements[6].components.entityComponent.titleV2.text.text
+
+DESC ULTIMO: 
+included[0].components.elements[10].components.entityComponent.subComponents.components[0].components.fixedListComponent.components[0].components.textComponent.text.text
+included[0].components.elements[8].components.entityComponent.subComponents.components[0].components.fixedListComponent.components[0].components.textComponent.text.text
+
+OBSERVACAO: o caminho das infos sao os mesmos, so tem uma difenca no index do included
