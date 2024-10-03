@@ -1,4 +1,4 @@
-package com.example.linkedin_scrapper.entities;
+package com.example.linkedin_scrapper.domains.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

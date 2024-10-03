@@ -1,6 +1,6 @@
 package com.example.linkedin_scrapper;
 
-import com.example.linkedin_scrapper.clients.ListPeopleClient;
+import com.example.linkedin_scrapper.services.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class LinkedinScrapperApplication {
 
-    final ListPeopleClient listPeopleClient;
+    private final UserService userService;
 
-    public LinkedinScrapperApplication(ListPeopleClient listPeopleClient) {
-        this.listPeopleClient = listPeopleClient;
+    public LinkedinScrapperApplication(UserService userService) {
+        this.userService = userService;
     }
 
     public static void main(String[] args) {
@@ -23,8 +23,7 @@ public class LinkedinScrapperApplication {
     @Bean
     public CommandLineRunner demo() {
         return (args) -> {
-//            RestClient restClient = listPeopleClient.getRestClient();
-//            System.out.println(listPeopleClient.execRestClient(restClient, 0));
+            userService.blabla();
         };
     }
 }

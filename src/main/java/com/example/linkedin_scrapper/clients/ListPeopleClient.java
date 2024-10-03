@@ -35,7 +35,7 @@ public class ListPeopleClient implements IClient {
     public String execRestClient(RestClient restClient, Integer start) {
         return restClient
                 .get()
-                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:true),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c", start)
+                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c", start)
                 .retrieve()
                 .body(String.class);
     }
@@ -43,7 +43,7 @@ public class ListPeopleClient implements IClient {
     public String execRestClient(RestClient restClient, Integer start, Integer school) {
         return restClient
                 .get()
-                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List({school}))),includeFiltersInResponse:true),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c", start, school)
+                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List({school}))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c", start, school)
                 .retrieve()
                 .body(String.class);
     }

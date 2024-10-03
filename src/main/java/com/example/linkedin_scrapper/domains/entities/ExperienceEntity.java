@@ -1,4 +1,4 @@
-package com.example.linkedin_scrapper.entities;
+package com.example.linkedin_scrapper.domains.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,13 +12,14 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "educations")
-public class EducationEntity {
+@Table(name = "experiences")
+public class ExperienceEntity {
     @Id
     private Long id;
-    private String course;
-    private String college;
+    private String company;
+    private String workload;
     private String period;
+    private String location;
     private String description;
     @ManyToOne
     private UserEntity user;

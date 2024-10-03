@@ -1,6 +1,6 @@
 package com.example.linkedin_scrapper.factories;
 
-import com.example.linkedin_scrapper.entities.EducationEntity;
+import com.example.linkedin_scrapper.domains.entities.EducationEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
