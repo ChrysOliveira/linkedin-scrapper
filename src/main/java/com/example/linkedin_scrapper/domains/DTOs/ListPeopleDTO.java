@@ -1,6 +1,5 @@
 package com.example.linkedin_scrapper.domains.DTOs;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -27,5 +26,4 @@ public class ListPeopleDTO {
     public static class Nome {
         private String text;
     }
-
 }

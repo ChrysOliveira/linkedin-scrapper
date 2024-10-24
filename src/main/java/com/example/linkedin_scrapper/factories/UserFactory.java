@@ -16,9 +16,11 @@ public class UserFactory {
         this.objectMapper = objectMapper;
     }
 
-    public UserEntity createUserEntity(String json) throws JsonProcessingException {
-        var userEntity = objectMapper.readValue(json, UserEntity.class);
-        userEntity.setCreatedAt(LocalDateTime.now());
-        return userEntity;
+    public UserEntity createUserEntity() throws JsonProcessingException {
+//        var userEntity = objectMapper.readValue(json, UserEntity.class);
+
+        return ;
+        // userEntity.setCreatedAt();
+//        return userEntity;
     }
 }
