@@ -19,7 +19,7 @@ public class UserFactory {
     public UserEntity createUserEntity() throws JsonProcessingException {
 //        var userEntity = objectMapper.readValue(json, UserEntity.class);
 
-        return ;
+        return null;
         // userEntity.setCreatedAt();
 //        return userEntity;
     }
