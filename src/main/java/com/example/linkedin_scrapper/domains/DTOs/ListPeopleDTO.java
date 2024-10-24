@@ -1,5 +1,6 @@
 package com.example.linkedin_scrapper.domains.DTOs;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,7 +16,16 @@ public class ListPeopleDTO {
     @Getter
     @Setter
     @ToString
-    private static class UserData {
+    public static class UserData {
         private String navigationUrl;
+        private Nome title;
     }
+
+    @Getter
+    @Setter
+    @ToString
+    public static class Nome {
+        private String text;
+    }
+
 }

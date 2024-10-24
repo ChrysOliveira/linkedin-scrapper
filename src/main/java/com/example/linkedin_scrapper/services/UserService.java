@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class UserService {
 
@@ -23,7 +26,8 @@ public class UserService {
         RestClient restClient = listPeopleClient.getRestClient();
         var resultado = listPeopleClient.execRestClient(restClient, 0);
         ListPeopleDTO listPeopleDTO = objectMapper.readValue(resultado, ListPeopleDTO.class);
-        System.out.println(listPeopleDTO);
+        List<ListPeopleDTO.UserData> list = listPeopleDTO.getIncluded().stream().filter(user -> user.getNavigationUrl() != null).toList();
+        System.out.println(list);
     }
 
 }
