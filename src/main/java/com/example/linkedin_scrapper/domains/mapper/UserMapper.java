@@ -2,17 +2,13 @@ package com.example.linkedin_scrapper.domains.mapper;
 
 import com.example.linkedin_scrapper.domains.DTOs.ListPeopleDTO;
 import com.example.linkedin_scrapper.domains.entities.UserEntity;
-import com.example.linkedin_scrapper.factories.UserFactory;
-import com.example.linkedin_scrapper.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Component
 public class UserMapper {
-    public UserEntity integration(ListPeopleDTO.UserData extracted){
+    public UserEntity UserDataToUserEntity(ListPeopleDTO.UserData extracted){
         String fullPath = extracted.getNavigationUrl();
 
         String name = extracted.getTitle().getText();

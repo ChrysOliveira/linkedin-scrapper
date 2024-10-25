@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -31,12 +30,12 @@ public class UserService {
     // TODO: remover teste
     public void blabla() throws JsonProcessingException {
         RestClient restClient = listPeopleClient.getRestClient();
-        var resultado = listPeopleClient.execRestClient(restClient, 0);
-        ListPeopleDTO listPeopleDTO = objectMapper.readValue(resultado, ListPeopleDTO.class);
+        var result = listPeopleClient.execRestClient(restClient, 0);
+        ListPeopleDTO listPeopleDTO = objectMapper.readValue(result, ListPeopleDTO.class);
         List<ListPeopleDTO.UserData> list = listPeopleDTO.getIncluded().stream().filter(user -> user.getNavigationUrl() != null).toList();
 
         for (ListPeopleDTO.UserData userData : list) {
-            UserEntity userEntity = userMapper.integration(userData);
+            UserEntity userEntity = userMapper.UserDataToUserEntity(userData);
             userRepository.save(userEntity);
         }
 
