@@ -13,7 +13,7 @@ public class UserMapper {
 
         String name = extracted.getTitle().getText();
         String linkedinProfile = fullPath.split("\\?")[0];
-        String linkedinId = fullPath.substring(fullPath.length() - 44);
+        String linkedinId = fullPath.substring(fullPath.length() - 40);
 
        return UserEntity.builder()
                 .name(name)
