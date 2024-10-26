@@ -1,5 +1,6 @@
 package com.example.linkedin_scrapper;
 
+import com.example.linkedin_scrapper.services.ExperienceService;
 import com.example.linkedin_scrapper.services.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,9 +12,11 @@ import org.springframework.context.annotation.Bean;
 public class LinkedinScrapperApplication {
 
     private final UserService userService;
+    private final ExperienceService experienceService;
 
-    public LinkedinScrapperApplication(UserService userService) {
+    public LinkedinScrapperApplication(UserService userService, ExperienceService experienceService) {
         this.userService = userService;
+        this.experienceService = experienceService;
     }
 
     public static void main(String[] args) {
@@ -23,7 +26,8 @@ public class LinkedinScrapperApplication {
     @Bean
     public CommandLineRunner demo() {
         return (args) -> {
-            userService.blabla();
+            //userService.blabla();
+            experienceService.requestExperience();
         };
     }
 }

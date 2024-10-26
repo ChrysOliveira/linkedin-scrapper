@@ -35,7 +35,7 @@
               "formElement": null,
               "promptComponent": null,
               "actionComponent": null,
-              "*pagedListComponent": "urn:li:fsd_profilePagedListComponent:(ACoAADadpjwBw3lzzkJY156lq2Xw8fsRfRAlDhQ,EXPERIENCE_VIEW_DETAILS,urn:li:fsd_profile:ACoAADadpjwBw3lzzkJY156lq2Xw8fsRfRAlDhQ,NONE,pt_BR)",
+              "*pagedListComponent": "urn:li:fsd_profilePagedListComponent:(ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,EXPERIENCE_VIEW_DETAILS,urn:li:fsd_profile:ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,NONE,pt_BR)",
               "emptyStateComponent": null,
               "mediaComponent": null,
               "contentComponent": null,
@@ -4794,7 +4794,7 @@
         "paging": {
           "count": 20,
           "start": 0,
-          "total": 3,
+          "total": 2,
           "$recipeTypes": [
             "com.linkedin.3e22bba6a6a41f7798143c68200ebff2"
           ],
@@ -4810,30 +4810,61 @@
               "carouselComponent": null,
               "textComponent": null,
               "entityComponent": {
-                "metadata": {
-                  "textDirection": "USER_LOCALE",
-                  "text": "São Paulo, São Paulo, Brasil · Presencial",
-                  "attributesV2": [],
-                  "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "São Paulo, São Paulo, Brasil · Presencial",
-                  "$recipeTypes": [
-                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                },
                 "isNullState": false,
+                "metadata": null,
                 "caption": {
                   "textDirection": "USER_LOCALE",
-                  "text": "mar de 2024 - o momento · 8 meses",
+                  "text": "São Paulo, Brazil · Híbrida",
                   "attributesV2": [],
                   "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "De mar de 2024 até o momento · 8 meses",
+                  "accessibilityText": "São Paulo, Brazil · Híbrida",
                   "$recipeTypes": [
                     "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                   ],
                   "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
                 },
-                "subComponents": null,
+                "subComponents": {
+                  "numInitialComponentsToShow": 1,
+                  "components": [
+                    {
+                      "components": {
+                        "insightComponent": null,
+                        "carouselComponent": null,
+                        "textComponent": null,
+                        "entityComponent": null,
+                        "completionMeterComponent": null,
+                        "wwuAdsComponent": null,
+                        "fixedListComponent": null,
+                        "headerComponent": null,
+                        "nullStateComponent": null,
+                        "tabComponent": null,
+                        "entityPileComponent": null,
+                        "formElement": null,
+                        "promptComponent": null,
+                        "actionComponent": null,
+                        "*pagedListComponent": "urn:li:fsd_profilePagedListComponent:(ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,EXPERIENCE_VIEW_DETAILS,urn:li:fsd_profilePositionGroup:(ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,c28fe0cb511a9ece81ebbbf74d5372ea3c463338),NONE,pt_BR)",
+                        "emptyStateComponent": null,
+                        "mediaComponent": null,
+                        "contentComponent": null,
+                        "miniUpdateUrn": null,
+                        "visibilitySettingButton": null
+                      },
+                      "$recipeTypes": [
+                        "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+                      ],
+                      "useCardStyling": false,
+                      "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+                    }
+                  ],
+                  "decorationType": "NONE",
+                  "padded": false,
+                  "footerAction": null,
+                  "title": null,
+                  "$recipeTypes": [
+                    "com.linkedin.005af51f0c00ce03120a93e307626c02"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
+                },
                 "iconEntityType": false,
                 "tertiaryAction": null,
                 "reorderableItem": null,
@@ -4846,10 +4877,10 @@
                   "actionTrackingMetadata": [],
                   "text": {
                     "textDirection": "USER_LOCALE",
-                    "text": "Desenvolvedor para iOS",
+                    "text": "F1RST Digital Services",
                     "attributesV2": [],
                     "accessibilityTextAttributesV2": [],
-                    "accessibilityText": "Desenvolvedor para iOS",
+                    "accessibilityText": "F1RST Digital Services",
                     "$recipeTypes": [
                       "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                     ],
@@ -4871,7 +4902,7 @@
                         "profilePictureWithRingStatus": null,
                         "icon": null,
                         "systemImage": null,
-                        "*companyLogo": "urn:li:fsd_company:18286307",
+                        "*companyLogo": "urn:li:fsd_company:66197178",
                         "nonEntityGroupLogo": null,
                         "vectorImage": null,
                         "nonEntityProfessionalEventLogo": null,
@@ -4895,16 +4926,16 @@
                     }
                   ],
                   "editableAccessibilityText": false,
-                  "actionTarget": "https://www.linkedin.com/company/18286307/",
+                  "actionTarget": "https://www.linkedin.com/company/66197178/",
                   "accessibilityTextAttributes": [],
                   "totalCount": null,
-                  "accessibilityText": "Logo da empresa Apple Developer Academy | Senac",
+                  "accessibilityText": "Logo da empresa F1RST Digital Services",
                   "$recipeTypes": [
                     "com.linkedin.8686732594a71b42a0b8f60ab9d70605"
                   ],
                   "$type": "com.linkedin.voyager.dash.common.image.ImageViewModel"
                 },
-                "textActionTarget": null,
+                "textActionTarget": "https://www.linkedin.com/company/66197178/",
                 "actionTrackingMetadata": [],
                 "supplementaryInfo": null,
                 "labelV2": null,
@@ -4917,10 +4948,10 @@
                 "size": "LARGE",
                 "subtitle": {
                   "textDirection": "USER_LOCALE",
-                  "text": "Apple Developer Academy | Senac · Estágio",
+                  "text": "1 a",
                   "attributesV2": [],
                   "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "Apple Developer Academy | Senac · Estágio",
+                  "accessibilityText": "1 a",
                   "$recipeTypes": [
                     "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                   ],
@@ -4959,10 +4990,10 @@
               "entityComponent": {
                 "metadata": {
                   "textDirection": "USER_LOCALE",
-                  "text": "Remota",
+                  "text": "São Paulo, Brasil · Híbrida",
                   "attributesV2": [],
                   "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "Remota",
+                  "accessibilityText": "São Paulo, Brasil · Híbrida",
                   "$recipeTypes": [
                     "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                   ],
@@ -4971,10 +5002,10 @@
                 "isNullState": false,
                 "caption": {
                   "textDirection": "USER_LOCALE",
-                  "text": "mar de 2023 - mar de 2024 · 1 ano 1 mês",
+                  "text": "jun de 2021 - nov de 2023 · 2 anos 6 meses",
                   "attributesV2": [],
                   "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "De mar de 2023 até mar de 2024 · 1 ano 1 mês",
+                  "accessibilityText": "De jun de 2021 até nov de 2023 · 2 anos 6 meses",
                   "$recipeTypes": [
                     "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                   ],
@@ -5005,7 +5036,7 @@
                                   "actionTrackingMetadata": [],
                                   "text": {
                                     "textDirection": "USER_LOCALE",
-                                    "text": "Competências: Desenvolvimento de jogos eletrônicos · Programação lógica · Metodologias Agile · .NET Framework · .NET Core · Desenvolvimento de software · Lógica · Linguagens de programação · Arquitetura de software · Desenvolvimento de front-end · Depuração · Git",
+                                    "text": "Competências: Office 365",
                                     "attributesV2": [
                                       {
                                         "start": 0,
@@ -5070,7 +5101,7 @@
                                         "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
                                       }
                                     ],
-                                    "accessibilityText": "Competências: Desenvolvimento de jogos eletrônicos · Programação lógica · Metodologias Agile · .NET Framework · .NET Core · Desenvolvimento de software · Lógica · Linguagens de programação · Arquitetura de software · Desenvolvimento de front-end · Depuração · Git",
+                                    "accessibilityText": "Competências: Office 365",
                                     "$recipeTypes": [
                                       "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                                     ],
@@ -5160,10 +5191,10 @@
                   "actionTrackingMetadata": [],
                   "text": {
                     "textDirection": "USER_LOCALE",
-                    "text": "Estagiário de desenvolvimento de software",
+                    "text": "Administrador de Contratos",
                     "attributesV2": [],
                     "accessibilityTextAttributesV2": [],
-                    "accessibilityText": "Estagiário de desenvolvimento de software",
+                    "accessibilityText": "Administrador de Contratos",
                     "$recipeTypes": [
                       "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                     ],
@@ -5185,7 +5216,7 @@
                         "profilePictureWithRingStatus": null,
                         "icon": null,
                         "systemImage": null,
-                        "*companyLogo": "urn:li:fsd_company:70432394",
+                        "*companyLogo": "urn:li:fsd_company:16248137",
                         "nonEntityGroupLogo": null,
                         "vectorImage": null,
                         "nonEntityProfessionalEventLogo": null,
@@ -5209,10 +5240,10 @@
                     }
                   ],
                   "editableAccessibilityText": false,
-                  "actionTarget": "https://www.linkedin.com/company/70432394/",
+                  "actionTarget": "https://www.linkedin.com/company/16248137/",
                   "accessibilityTextAttributes": [],
                   "totalCount": null,
-                  "accessibilityText": "Logo da empresa MODÚ",
+                  "accessibilityText": "Logo da empresa Omint",
                   "$recipeTypes": [
                     "com.linkedin.8686732594a71b42a0b8f60ab9d70605"
                   ],
@@ -5231,417 +5262,10 @@
                 "size": "LARGE",
                 "subtitle": {
                   "textDirection": "USER_LOCALE",
-                  "text": "MODÚ · Estágio",
+                  "text": "Omint · Tempo integral",
                   "attributesV2": [],
                   "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "MODÚ · Estágio",
-                  "$recipeTypes": [
-                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                },
-                "subtitleV2": null
-              },
-              "completionMeterComponent": null,
-              "wwuAdsComponent": null,
-              "fixedListComponent": null,
-              "headerComponent": null,
-              "nullStateComponent": null,
-              "tabComponent": null,
-              "entityPileComponent": null,
-              "pagedListComponent": null,
-              "formElement": null,
-              "promptComponent": null,
-              "actionComponent": null,
-              "emptyStateComponent": null,
-              "mediaComponent": null,
-              "contentComponent": null,
-              "miniUpdateUrn": null,
-              "visibilitySettingButton": null
-            },
-            "$recipeTypes": [
-              "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
-            ],
-            "useCardStyling": false,
-            "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
-          },
-          {
-            "components": {
-              "insightComponent": null,
-              "carouselComponent": null,
-              "textComponent": null,
-              "entityComponent": {
-                "metadata": {
-                  "textDirection": "USER_LOCALE",
-                  "text": "São Paulo, Brasil · Presencial",
-                  "attributesV2": [],
-                  "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "São Paulo, Brasil · Presencial",
-                  "$recipeTypes": [
-                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                },
-                "isNullState": false,
-                "caption": {
-                  "textDirection": "USER_LOCALE",
-                  "text": "ago de 2022 - fev de 2023 · 7 meses",
-                  "attributesV2": [],
-                  "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "De ago de 2022 até fev de 2023 · 7 meses",
-                  "$recipeTypes": [
-                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                },
-                "subComponents": {
-                  "numInitialComponentsToShow": 2,
-                  "components": [
-                    {
-                      "components": {
-                        "insightComponent": null,
-                        "carouselComponent": null,
-                        "textComponent": null,
-                        "entityComponent": null,
-                        "completionMeterComponent": null,
-                        "wwuAdsComponent": null,
-                        "fixedListComponent": {
-                          "numInitialComponentsToShow": null,
-                          "actionDelegateUrn": null,
-                          "components": [
-                            {
-                              "components": {
-                                "insightComponent": null,
-                                "textComponent": {
-                                  "padded": false,
-                                  "expandable": true,
-                                  "numInitialLinesToShow": null,
-                                  "actionTrackingMetadata": [],
-                                  "text": {
-                                    "textDirection": "USER_LOCALE",
-                                    "text": "Desenvolvimento de soluções para o Senac e para clientes externos.\n\nAtuei em um projeto da empresa Modú, a qual trabalho atualmente.\n\nO projeto consistia em um configurador de móveis planejados, utilizando a engine Unity.",
-                                    "attributesV2": [],
-                                    "accessibilityTextAttributesV2": [],
-                                    "accessibilityText": "Desenvolvimento de soluções para o Senac e para clientes externos.\n\nAtuei em um projeto da empresa Modú, a qual trabalho atualmente.\n\nO projeto consistia em um configurador de móveis planejados, utilizando a engine Unity.",
-                                    "$recipeTypes": [
-                                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                                    ],
-                                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                                  },
-                                  "actionTarget": null,
-                                  "seeMoreControlName": null,
-                                  "$recipeTypes": [
-                                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
-                                  ],
-                                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
-                                },
-                                "carouselComponent": null,
-                                "entityComponent": null,
-                                "completionMeterComponent": null,
-                                "wwuAdsComponent": null,
-                                "fixedListComponent": null,
-                                "headerComponent": null,
-                                "nullStateComponent": null,
-                                "tabComponent": null,
-                                "entityPileComponent": null,
-                                "pagedListComponent": null,
-                                "formElement": null,
-                                "promptComponent": null,
-                                "actionComponent": null,
-                                "emptyStateComponent": null,
-                                "mediaComponent": null,
-                                "contentComponent": null,
-                                "miniUpdateUrn": null,
-                                "visibilitySettingButton": null
-                              },
-                              "$recipeTypes": [
-                                "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
-                              ],
-                              "useCardStyling": false,
-                              "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
-                            }
-                          ],
-                          "decorationType": "TOP_PADDED",
-                          "padded": false,
-                          "footerAction": null,
-                          "title": null,
-                          "$recipeTypes": [
-                            "com.linkedin.005af51f0c00ce03120a93e307626c02"
-                          ],
-                          "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
-                        },
-                        "headerComponent": null,
-                        "nullStateComponent": null,
-                        "tabComponent": null,
-                        "entityPileComponent": null,
-                        "pagedListComponent": null,
-                        "formElement": null,
-                        "promptComponent": null,
-                        "actionComponent": null,
-                        "emptyStateComponent": null,
-                        "mediaComponent": null,
-                        "contentComponent": null,
-                        "miniUpdateUrn": null,
-                        "visibilitySettingButton": null
-                      },
-                      "$recipeTypes": [
-                        "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
-                      ],
-                      "useCardStyling": false,
-                      "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
-                    },
-                    {
-                      "components": {
-                        "insightComponent": null,
-                        "carouselComponent": null,
-                        "textComponent": null,
-                        "entityComponent": null,
-                        "completionMeterComponent": null,
-                        "wwuAdsComponent": null,
-                        "fixedListComponent": {
-                          "numInitialComponentsToShow": null,
-                          "actionDelegateUrn": null,
-                          "components": [
-                            {
-                              "components": {
-                                "insightComponent": null,
-                                "textComponent": {
-                                  "padded": false,
-                                  "expandable": true,
-                                  "numInitialLinesToShow": null,
-                                  "actionTrackingMetadata": [],
-                                  "text": {
-                                    "textDirection": "USER_LOCALE",
-                                    "text": "Competências: Scrum · Unity · C# · Desenvolvimento de front-end · Git · UI/UX",
-                                    "attributesV2": [
-                                      {
-                                        "start": 0,
-                                        "length": 13,
-                                        "detailData": {
-                                          "jobPostingName": null,
-                                          "hyperlink": null,
-                                          "profileFamiliarName": null,
-                                          "color": null,
-                                          "companyName": null,
-                                          "icon": null,
-                                          "epoch": null,
-                                          "systemImage": null,
-                                          "textLink": null,
-                                          "listItemStyle": null,
-                                          "groupName": null,
-                                          "hyperlinkOpenExternally": null,
-                                          "listStyle": null,
-                                          "profileFullName": null,
-                                          "stringFieldReference": null,
-                                          "learningCourseName": null,
-                                          "profileMention": null,
-                                          "style": "BOLD",
-                                          "schoolName": null,
-                                          "hashtag": null
-                                        },
-                                        "$recipeTypes": [
-                                          "com.linkedin.5cc57b751e3f28b91e17e39bacf4a0cb"
-                                        ],
-                                        "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
-                                      }
-                                    ],
-                                    "accessibilityTextAttributesV2": [
-                                      {
-                                        "start": 0,
-                                        "length": 13,
-                                        "detailData": {
-                                          "jobPostingName": null,
-                                          "hyperlink": null,
-                                          "profileFamiliarName": null,
-                                          "color": null,
-                                          "companyName": null,
-                                          "icon": null,
-                                          "epoch": null,
-                                          "systemImage": null,
-                                          "textLink": null,
-                                          "listItemStyle": null,
-                                          "groupName": null,
-                                          "hyperlinkOpenExternally": null,
-                                          "listStyle": null,
-                                          "profileFullName": null,
-                                          "stringFieldReference": null,
-                                          "learningCourseName": null,
-                                          "profileMention": null,
-                                          "style": "BOLD",
-                                          "schoolName": null,
-                                          "hashtag": null
-                                        },
-                                        "$recipeTypes": [
-                                          "com.linkedin.5cc57b751e3f28b91e17e39bacf4a0cb"
-                                        ],
-                                        "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
-                                      }
-                                    ],
-                                    "accessibilityText": "Competências: Scrum · Unity · C# · Desenvolvimento de front-end · Git · UI/UX",
-                                    "$recipeTypes": [
-                                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                                    ],
-                                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                                  },
-                                  "actionTarget": null,
-                                  "seeMoreControlName": null,
-                                  "$recipeTypes": [
-                                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
-                                  ],
-                                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
-                                },
-                                "carouselComponent": null,
-                                "entityComponent": null,
-                                "completionMeterComponent": null,
-                                "wwuAdsComponent": null,
-                                "fixedListComponent": null,
-                                "headerComponent": null,
-                                "nullStateComponent": null,
-                                "tabComponent": null,
-                                "entityPileComponent": null,
-                                "pagedListComponent": null,
-                                "formElement": null,
-                                "promptComponent": null,
-                                "actionComponent": null,
-                                "emptyStateComponent": null,
-                                "mediaComponent": null,
-                                "contentComponent": null,
-                                "miniUpdateUrn": null,
-                                "visibilitySettingButton": null
-                              },
-                              "$recipeTypes": [
-                                "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
-                              ],
-                              "useCardStyling": false,
-                              "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
-                            }
-                          ],
-                          "decorationType": "TOP_PADDED",
-                          "padded": false,
-                          "footerAction": null,
-                          "title": null,
-                          "$recipeTypes": [
-                            "com.linkedin.005af51f0c00ce03120a93e307626c02"
-                          ],
-                          "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
-                        },
-                        "headerComponent": null,
-                        "nullStateComponent": null,
-                        "tabComponent": null,
-                        "entityPileComponent": null,
-                        "pagedListComponent": null,
-                        "formElement": null,
-                        "promptComponent": null,
-                        "actionComponent": null,
-                        "emptyStateComponent": null,
-                        "mediaComponent": null,
-                        "contentComponent": null,
-                        "miniUpdateUrn": null,
-                        "visibilitySettingButton": null
-                      },
-                      "$recipeTypes": [
-                        "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
-                      ],
-                      "useCardStyling": false,
-                      "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
-                    }
-                  ],
-                  "decorationType": "NONE",
-                  "padded": false,
-                  "footerAction": null,
-                  "title": null,
-                  "$recipeTypes": [
-                    "com.linkedin.005af51f0c00ce03120a93e307626c02"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
-                },
-                "iconEntityType": false,
-                "tertiaryAction": null,
-                "reorderableItem": null,
-                "impressionTrackingMetadata": [],
-                "secondaryAction": null,
-                "titleV2": {
-                  "padded": false,
-                  "expandable": true,
-                  "numInitialLinesToShow": null,
-                  "actionTrackingMetadata": [],
-                  "text": {
-                    "textDirection": "USER_LOCALE",
-                    "text": "Bolsista",
-                    "attributesV2": [],
-                    "accessibilityTextAttributesV2": [],
-                    "accessibilityText": "Bolsista",
-                    "$recipeTypes": [
-                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
-                    ],
-                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-                  },
-                  "actionTarget": null,
-                  "seeMoreControlName": null,
-                  "$recipeTypes": [
-                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
-                },
-                "image": {
-                  "attributes": [
-                    {
-                      "scalingType": null,
-                      "detailData": {
-                        "profilePictureWithoutFrame": null,
-                        "profilePictureWithRingStatus": null,
-                        "icon": null,
-                        "systemImage": null,
-                        "*companyLogo": "urn:li:fsd_company:11354076",
-                        "nonEntityGroupLogo": null,
-                        "vectorImage": null,
-                        "nonEntityProfessionalEventLogo": null,
-                        "profilePicture": null,
-                        "imageUrl": null,
-                        "professionalEventLogo": null,
-                        "nonEntityCompanyLogo": null,
-                        "nonEntitySchoolLogo": null,
-                        "groupLogo": null,
-                        "schoolLogo": null,
-                        "ghostImage": null,
-                        "nonEntityProfilePicture": null
-                      },
-                      "tintColor": null,
-                      "$recipeTypes": [
-                        "com.linkedin.067b5ffc9ef372abe3faf0a71e6a467a"
-                      ],
-                      "tapTargets": [],
-                      "displayAspectRatio": null,
-                      "$type": "com.linkedin.voyager.dash.common.image.ImageAttribute"
-                    }
-                  ],
-                  "editableAccessibilityText": false,
-                  "actionTarget": "https://www.linkedin.com/company/11354076/",
-                  "accessibilityTextAttributes": [],
-                  "totalCount": null,
-                  "accessibilityText": "Logo da empresa Centro Universitário Senac",
-                  "$recipeTypes": [
-                    "com.linkedin.8686732594a71b42a0b8f60ab9d70605"
-                  ],
-                  "$type": "com.linkedin.voyager.dash.common.image.ImageViewModel"
-                },
-                "textActionTarget": null,
-                "actionTrackingMetadata": [],
-                "supplementaryInfo": null,
-                "labelV2": null,
-                "$recipeTypes": [
-                  "com.linkedin.7b26226ae91a287a666f65b8c247aa80"
-                ],
-                "$type": "com.linkedin.voyager.dash.identity.profile.tetris.EntityComponent",
-                "badge": null,
-                "padded": true,
-                "size": "LARGE",
-                "subtitle": {
-                  "textDirection": "USER_LOCALE",
-                  "text": "Centro Universitário Senac · Meio período",
-                  "attributesV2": [],
-                  "accessibilityTextAttributesV2": [],
-                  "accessibilityText": "Centro Universitário Senac · Meio período",
+                  "accessibilityText": "Omint · Tempo integral",
                   "$recipeTypes": [
                     "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
                   ],
@@ -5677,7 +5301,7 @@
       },
       "decorationType": "LINE_SEPARATED",
       "padded": false,
-      "entityUrn": "urn:li:fsd_profilePagedListComponent:(ACoAADadpjwBw3lzzkJY156lq2Xw8fsRfRAlDhQ,EXPERIENCE_VIEW_DETAILS,urn:li:fsd_profile:ACoAADadpjwBw3lzzkJY156lq2Xw8fsRfRAlDhQ,NONE,pt_BR)",
+      "entityUrn": "urn:li:fsd_profilePagedListComponent:(ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,EXPERIENCE_VIEW_DETAILS,urn:li:fsd_profile:ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,NONE,pt_BR)",
       "reorderable": false,
       "pageSize": 20,
       "footerAction": null,
@@ -5687,11 +5311,579 @@
       "$type": "com.linkedin.voyager.dash.identity.profile.tetris.PagedListComponent"
     },
     {
-      "entityUrn": "urn:li:fsd_company:11354076",
+      "components": {
+        "metadata": {
+          "paginationToken": null,
+          "$recipeTypes": [
+            "com.linkedin.dc1e04652272bb9034e988cb55abf5cf"
+          ],
+          "$type": "com.linkedin.voyager.dash.identity.profile.tetris.PagedComponentsCollectionMetadata"
+        },
+        "paging": {
+          "count": 20,
+          "start": 0,
+          "total": 2,
+          "$recipeTypes": [
+            "com.linkedin.3e22bba6a6a41f7798143c68200ebff2"
+          ],
+          "$type": "com.linkedin.restli.common.CollectionMetadata"
+        },
+        "$recipeTypes": [
+          "com.linkedin.95737f453f7f7f850cc15eba0ec019d5"
+        ],
+        "elements": [
+          {
+            "components": {
+              "insightComponent": null,
+              "carouselComponent": null,
+              "textComponent": null,
+              "entityComponent": {
+                "isNullState": false,
+                "metadata": null,
+                "controlName": null,
+                "caption": {
+                  "textDirection": "USER_LOCALE",
+                  "text": "ago de 2024 - o momento · 3 meses",
+                  "attributesV2": [],
+                  "accessibilityTextAttributesV2": [],
+                  "accessibilityText": "De ago de 2024 até o momento · 3 meses",
+                  "$recipeTypes": [
+                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                },
+                "subComponents": {
+                  "numInitialComponentsToShow": 1,
+                  "actionDelegateUrn": null,
+                  "components": [
+                    {
+                      "components": {
+                        "insightComponent": null,
+                        "carouselComponent": null,
+                        "textComponent": null,
+                        "entityComponent": null,
+                        "completionMeterComponent": null,
+                        "wwuAdsComponent": null,
+                        "fixedListComponent": {
+                          "numInitialComponentsToShow": null,
+                          "actionDelegateUrn": null,
+                          "components": [
+                            {
+                              "components": {
+                                "insightComponent": null,
+                                "textComponent": {
+                                  "padded": false,
+                                  "expandable": true,
+                                  "numInitialLinesToShow": null,
+                                  "actionTrackingMetadata": [],
+                                  "text": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Competências: Spring Framework · Office 365 · MongoDB · Amazon Web Services (AWS) · Java · PostgreSQL · JavaScript",
+                                    "attributesV2": [
+                                      {
+                                        "start": 0,
+                                        "length": 13,
+                                        "detailData": {
+                                          "jobPostingName": null,
+                                          "hyperlink": null,
+                                          "profileFamiliarName": null,
+                                          "color": null,
+                                          "companyName": null,
+                                          "icon": null,
+                                          "epoch": null,
+                                          "systemImage": null,
+                                          "textLink": null,
+                                          "listItemStyle": null,
+                                          "groupName": null,
+                                          "hyperlinkOpenExternally": null,
+                                          "listStyle": null,
+                                          "profileFullName": null,
+                                          "stringFieldReference": null,
+                                          "learningCourseName": null,
+                                          "profileMention": null,
+                                          "style": "BOLD",
+                                          "schoolName": null,
+                                          "hashtag": null
+                                        },
+                                        "$recipeTypes": [
+                                          "com.linkedin.5cc57b751e3f28b91e17e39bacf4a0cb"
+                                        ],
+                                        "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+                                      }
+                                    ],
+                                    "accessibilityTextAttributesV2": [
+                                      {
+                                        "start": 0,
+                                        "length": 13,
+                                        "detailData": {
+                                          "jobPostingName": null,
+                                          "hyperlink": null,
+                                          "profileFamiliarName": null,
+                                          "color": null,
+                                          "companyName": null,
+                                          "icon": null,
+                                          "epoch": null,
+                                          "systemImage": null,
+                                          "textLink": null,
+                                          "listItemStyle": null,
+                                          "groupName": null,
+                                          "hyperlinkOpenExternally": null,
+                                          "listStyle": null,
+                                          "profileFullName": null,
+                                          "stringFieldReference": null,
+                                          "learningCourseName": null,
+                                          "profileMention": null,
+                                          "style": "BOLD",
+                                          "schoolName": null,
+                                          "hashtag": null
+                                        },
+                                        "$recipeTypes": [
+                                          "com.linkedin.5cc57b751e3f28b91e17e39bacf4a0cb"
+                                        ],
+                                        "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+                                      }
+                                    ],
+                                    "accessibilityText": "Competências: Spring Framework · Office 365 · MongoDB · Amazon Web Services (AWS) · Java · PostgreSQL · JavaScript",
+                                    "$recipeTypes": [
+                                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                                    ],
+                                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                                  },
+                                  "actionTarget": null,
+                                  "seeMoreControlName": null,
+                                  "$recipeTypes": [
+                                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
+                                  ],
+                                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
+                                },
+                                "carouselComponent": null,
+                                "entityComponent": null,
+                                "completionMeterComponent": null,
+                                "wwuAdsComponent": null,
+                                "fixedListComponent": null,
+                                "headerComponent": null,
+                                "nullStateComponent": null,
+                                "tabComponent": null,
+                                "entityPileComponent": null,
+                                "pagedListComponent": null,
+                                "formElement": null,
+                                "promptComponent": null,
+                                "actionComponent": null,
+                                "emptyStateComponent": null,
+                                "mediaComponent": null,
+                                "contentComponent": null,
+                                "miniUpdateUrn": null,
+                                "visibilitySettingButton": null
+                              },
+                              "$recipeTypes": [
+                                "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+                              ],
+                              "useCardStyling": false,
+                              "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+                            }
+                          ],
+                          "decorationType": "TOP_PADDED",
+                          "padded": false,
+                          "footerAction": null,
+                          "title": null,
+                          "$recipeTypes": [
+                            "com.linkedin.005af51f0c00ce03120a93e307626c02"
+                          ],
+                          "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
+                        },
+                        "headerComponent": null,
+                        "nullStateComponent": null,
+                        "tabComponent": null,
+                        "entityPileComponent": null,
+                        "pagedListComponent": null,
+                        "formElement": null,
+                        "promptComponent": null,
+                        "actionComponent": null,
+                        "emptyStateComponent": null,
+                        "mediaComponent": null,
+                        "contentComponent": null,
+                        "miniUpdateUrn": null,
+                        "visibilitySettingButton": null
+                      },
+                      "$recipeTypes": [
+                        "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+                      ],
+                      "useCardStyling": false,
+                      "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+                    }
+                  ],
+                  "decorationType": "NONE",
+                  "padded": false,
+                  "footerAction": null,
+                  "title": null,
+                  "$recipeTypes": [
+                    "com.linkedin.005af51f0c00ce03120a93e307626c02"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
+                },
+                "iconEntityType": false,
+                "tertiaryAction": null,
+                "reorderableItem": null,
+                "impressionTrackingMetadata": [],
+                "secondaryAction": null,
+                "pathStyle": "TOP",
+                "titleV2": {
+                  "padded": false,
+                  "expandable": true,
+                  "numInitialLinesToShow": null,
+                  "actionTrackingMetadata": [],
+                  "text": {
+                    "textDirection": "USER_LOCALE",
+                    "text": "IT Developer",
+                    "attributesV2": [],
+                    "accessibilityTextAttributesV2": [],
+                    "accessibilityText": "IT Developer",
+                    "$recipeTypes": [
+                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                    ],
+                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                  },
+                  "actionTarget": null,
+                  "seeMoreControlName": null,
+                  "$recipeTypes": [
+                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
+                },
+                "image": null,
+                "textActionTarget": "https://www.linkedin.com/company/66197178/",
+                "actionTrackingMetadata": [],
+                "supplementaryInfo": null,
+                "labelV2": null,
+                "$recipeTypes": [
+                  "com.linkedin.7b26226ae91a287a666f65b8c247aa80"
+                ],
+                "$type": "com.linkedin.voyager.dash.identity.profile.tetris.EntityComponent",
+                "badge": null,
+                "padded": false,
+                "size": "LARGE",
+                "subtitle": {
+                  "textDirection": "USER_LOCALE",
+                  "text": "Tempo integral",
+                  "attributesV2": [],
+                  "accessibilityTextAttributesV2": [],
+                  "accessibilityText": "Tempo integral",
+                  "$recipeTypes": [
+                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                },
+                "subtitleV2": null
+              },
+              "completionMeterComponent": null,
+              "wwuAdsComponent": null,
+              "fixedListComponent": null,
+              "headerComponent": null,
+              "nullStateComponent": null,
+              "tabComponent": null,
+              "entityPileComponent": null,
+              "pagedListComponent": null,
+              "formElement": null,
+              "promptComponent": null,
+              "actionComponent": null,
+              "emptyStateComponent": null,
+              "mediaComponent": null,
+              "contentComponent": null,
+              "miniUpdateUrn": null,
+              "visibilitySettingButton": null
+            },
+            "$recipeTypes": [
+              "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+            ],
+            "useCardStyling": false,
+            "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+          },
+          {
+            "components": {
+              "insightComponent": null,
+              "carouselComponent": null,
+              "textComponent": null,
+              "entityComponent": {
+                "isNullState": false,
+                "metadata": null,
+                "controlName": null,
+                "caption": {
+                  "textDirection": "USER_LOCALE",
+                  "text": "nov de 2023 - ago de 2024 · 10 meses",
+                  "attributesV2": [],
+                  "accessibilityTextAttributesV2": [],
+                  "accessibilityText": "De nov de 2023 até ago de 2024 · 10 meses",
+                  "$recipeTypes": [
+                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                },
+                "subComponents": {
+                  "numInitialComponentsToShow": 1,
+                  "actionDelegateUrn": null,
+                  "components": [
+                    {
+                      "components": {
+                        "insightComponent": null,
+                        "carouselComponent": null,
+                        "textComponent": null,
+                        "entityComponent": null,
+                        "completionMeterComponent": null,
+                        "wwuAdsComponent": null,
+                        "fixedListComponent": {
+                          "numInitialComponentsToShow": null,
+                          "actionDelegateUrn": null,
+                          "components": [
+                            {
+                              "components": {
+                                "insightComponent": null,
+                                "textComponent": {
+                                  "padded": false,
+                                  "expandable": true,
+                                  "numInitialLinesToShow": null,
+                                  "actionTrackingMetadata": [],
+                                  "text": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Competências: Spring Framework · Office 365 · MongoDB · Amazon Web Services (AWS) · Java · PostgreSQL · JavaScript",
+                                    "attributesV2": [
+                                      {
+                                        "start": 0,
+                                        "length": 13,
+                                        "detailData": {
+                                          "jobPostingName": null,
+                                          "hyperlink": null,
+                                          "profileFamiliarName": null,
+                                          "color": null,
+                                          "companyName": null,
+                                          "icon": null,
+                                          "epoch": null,
+                                          "systemImage": null,
+                                          "textLink": null,
+                                          "listItemStyle": null,
+                                          "groupName": null,
+                                          "hyperlinkOpenExternally": null,
+                                          "listStyle": null,
+                                          "profileFullName": null,
+                                          "stringFieldReference": null,
+                                          "learningCourseName": null,
+                                          "profileMention": null,
+                                          "style": "BOLD",
+                                          "schoolName": null,
+                                          "hashtag": null
+                                        },
+                                        "$recipeTypes": [
+                                          "com.linkedin.5cc57b751e3f28b91e17e39bacf4a0cb"
+                                        ],
+                                        "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+                                      }
+                                    ],
+                                    "accessibilityTextAttributesV2": [
+                                      {
+                                        "start": 0,
+                                        "length": 13,
+                                        "detailData": {
+                                          "jobPostingName": null,
+                                          "hyperlink": null,
+                                          "profileFamiliarName": null,
+                                          "color": null,
+                                          "companyName": null,
+                                          "icon": null,
+                                          "epoch": null,
+                                          "systemImage": null,
+                                          "textLink": null,
+                                          "listItemStyle": null,
+                                          "groupName": null,
+                                          "hyperlinkOpenExternally": null,
+                                          "listStyle": null,
+                                          "profileFullName": null,
+                                          "stringFieldReference": null,
+                                          "learningCourseName": null,
+                                          "profileMention": null,
+                                          "style": "BOLD",
+                                          "schoolName": null,
+                                          "hashtag": null
+                                        },
+                                        "$recipeTypes": [
+                                          "com.linkedin.5cc57b751e3f28b91e17e39bacf4a0cb"
+                                        ],
+                                        "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+                                      }
+                                    ],
+                                    "accessibilityText": "Competências: Spring Framework · Office 365 · MongoDB · Amazon Web Services (AWS) · Java · PostgreSQL · JavaScript",
+                                    "$recipeTypes": [
+                                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                                    ],
+                                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                                  },
+                                  "actionTarget": null,
+                                  "seeMoreControlName": null,
+                                  "$recipeTypes": [
+                                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
+                                  ],
+                                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
+                                },
+                                "carouselComponent": null,
+                                "entityComponent": null,
+                                "completionMeterComponent": null,
+                                "wwuAdsComponent": null,
+                                "fixedListComponent": null,
+                                "headerComponent": null,
+                                "nullStateComponent": null,
+                                "tabComponent": null,
+                                "entityPileComponent": null,
+                                "pagedListComponent": null,
+                                "formElement": null,
+                                "promptComponent": null,
+                                "actionComponent": null,
+                                "emptyStateComponent": null,
+                                "mediaComponent": null,
+                                "contentComponent": null,
+                                "miniUpdateUrn": null,
+                                "visibilitySettingButton": null
+                              },
+                              "$recipeTypes": [
+                                "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+                              ],
+                              "useCardStyling": false,
+                              "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+                            }
+                          ],
+                          "decorationType": "TOP_PADDED",
+                          "padded": false,
+                          "footerAction": null,
+                          "title": null,
+                          "$recipeTypes": [
+                            "com.linkedin.005af51f0c00ce03120a93e307626c02"
+                          ],
+                          "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
+                        },
+                        "headerComponent": null,
+                        "nullStateComponent": null,
+                        "tabComponent": null,
+                        "entityPileComponent": null,
+                        "pagedListComponent": null,
+                        "formElement": null,
+                        "promptComponent": null,
+                        "actionComponent": null,
+                        "emptyStateComponent": null,
+                        "mediaComponent": null,
+                        "contentComponent": null,
+                        "miniUpdateUrn": null,
+                        "visibilitySettingButton": null
+                      },
+                      "$recipeTypes": [
+                        "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+                      ],
+                      "useCardStyling": false,
+                      "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+                    }
+                  ],
+                  "decorationType": "NONE",
+                  "padded": false,
+                  "footerAction": null,
+                  "title": null,
+                  "$recipeTypes": [
+                    "com.linkedin.005af51f0c00ce03120a93e307626c02"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.FixedListComponent"
+                },
+                "iconEntityType": false,
+                "tertiaryAction": null,
+                "reorderableItem": null,
+                "impressionTrackingMetadata": [],
+                "secondaryAction": null,
+                "pathStyle": "LAST",
+                "titleV2": {
+                  "padded": false,
+                  "expandable": true,
+                  "numInitialLinesToShow": null,
+                  "actionTrackingMetadata": [],
+                  "text": {
+                    "textDirection": "USER_LOCALE",
+                    "text": "Software Development Intern",
+                    "attributesV2": [],
+                    "accessibilityTextAttributesV2": [],
+                    "accessibilityText": "Software Development Intern",
+                    "$recipeTypes": [
+                      "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                    ],
+                    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                  },
+                  "actionTarget": null,
+                  "seeMoreControlName": null,
+                  "$recipeTypes": [
+                    "com.linkedin.e21066737a1e0a52a38f658e3be02759"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.identity.profile.tetris.TextComponent"
+                },
+                "image": null,
+                "textActionTarget": "https://www.linkedin.com/company/66197178/",
+                "actionTrackingMetadata": [],
+                "supplementaryInfo": null,
+                "labelV2": null,
+                "$recipeTypes": [
+                  "com.linkedin.7b26226ae91a287a666f65b8c247aa80"
+                ],
+                "$type": "com.linkedin.voyager.dash.identity.profile.tetris.EntityComponent",
+                "badge": null,
+                "padded": false,
+                "size": "LARGE",
+                "subtitle": {
+                  "textDirection": "USER_LOCALE",
+                  "text": "Estágio",
+                  "attributesV2": [],
+                  "accessibilityTextAttributesV2": [],
+                  "accessibilityText": "Estágio",
+                  "$recipeTypes": [
+                    "com.linkedin.f81528c3eb23923eb2f91b433fb02422"
+                  ],
+                  "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+                },
+                "subtitleV2": null
+              },
+              "completionMeterComponent": null,
+              "wwuAdsComponent": null,
+              "fixedListComponent": null,
+              "headerComponent": null,
+              "nullStateComponent": null,
+              "tabComponent": null,
+              "entityPileComponent": null,
+              "pagedListComponent": null,
+              "formElement": null,
+              "promptComponent": null,
+              "actionComponent": null,
+              "emptyStateComponent": null,
+              "mediaComponent": null,
+              "contentComponent": null,
+              "miniUpdateUrn": null,
+              "visibilitySettingButton": null
+            },
+            "$recipeTypes": [
+              "com.linkedin.83a3215b359dd9ba6acb0d4736bd3e70"
+            ],
+            "useCardStyling": false,
+            "$type": "com.linkedin.voyager.dash.identity.profile.tetris.Component"
+          }
+        ],
+        "$type": "com.linkedin.restli.common.CollectionResponse"
+      },
+      "decorationType": "NONE",
+      "padded": false,
+      "entityUrn": "urn:li:fsd_profilePagedListComponent:(ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,EXPERIENCE_VIEW_DETAILS,urn:li:fsd_profilePositionGroup:(ACoAAC7YFPIBsmXS4cgc5t15OeU-xQlXx2H60JM,c28fe0cb511a9ece81ebbbf74d5372ea3c463338),NONE,pt_BR)",
+      "reorderable": false,
+      "pageSize": 20,
+      "footerAction": null,
+      "$recipeTypes": [
+        "com.linkedin.554d4486b73c917f7a2a90ea46a08898"
+      ],
+      "$type": "com.linkedin.voyager.dash.identity.profile.tetris.PagedListComponent"
+    },
+    {
+      "entityUrn": "urn:li:fsd_company:66197178",
       "logoResolutionResult": {
         "url": null,
         "vectorImage": {
-          "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D0BAQHSFPL1I4glBA",
+          "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D0BAQF3R0DsT8T3OQ",
           "attribution": null,
           "c2paManifestData": null,
           "$recipeTypes": [
@@ -5703,7 +5895,7 @@
               "$recipeTypes": [
                 "com.linkedin.39256c69f250871e18a7142b6bfcf308"
               ],
-              "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1727787548770/centrouniversitariosenac_logo?e=1738195200&v=beta&t=0ZhkUhzaphQ2AaMaEV_7xKWEy7pyJBiziYU3XXIcow0",
+              "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1719852758276/f1rstdigitalservices_logo?e=1738195200&v=beta&t=CwRy2U3sdbD2HBJ8WoCUFweVAKtgIOdGn4G0a8aOBrE",
               "expiresAt": 1738195200000,
               "height": 200,
               "$type": "com.linkedin.common.VectorArtifact"
@@ -5713,7 +5905,7 @@
               "$recipeTypes": [
                 "com.linkedin.39256c69f250871e18a7142b6bfcf308"
               ],
-              "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1727787548770/centrouniversitariosenac_logo?e=1738195200&v=beta&t=OUcHyulI0hFMREkWzPB_KSlMyP9C9ZXXxng_dw2h8QM",
+              "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1719852758276/f1rstdigitalservices_logo?e=1738195200&v=beta&t=7XNavXsF-RkVW_a0UPbXTKM0U0hMm_zI_nySjZegXj0",
               "expiresAt": 1738195200000,
               "height": 100,
               "$type": "com.linkedin.common.VectorArtifact"
@@ -5723,13 +5915,13 @@
               "$recipeTypes": [
                 "com.linkedin.39256c69f250871e18a7142b6bfcf308"
               ],
-              "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1727787548770/centrouniversitariosenac_logo?e=1738195200&v=beta&t=Ya-pZBIkE_WiiYhu-tMNzqfMzPgdCm2ZLLGgkve2cQ4",
+              "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1719852758277/f1rstdigitalservices_logo?e=1738195200&v=beta&t=VpcqMT6Ca1g7Ut7Q3-jbHQM-sAOAn8UXDdmJKDNYF9o",
               "expiresAt": 1738195200000,
               "height": 400,
               "$type": "com.linkedin.common.VectorArtifact"
             }
           ],
-          "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHSFPL1I4glBA/company-logo_",
+          "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQF3R0DsT8T3OQ/company-logo_",
           "$type": "com.linkedin.common.VectorImage"
         }
       },
@@ -5739,11 +5931,11 @@
       "$type": "com.linkedin.voyager.dash.organization.Company"
     },
     {
-      "entityUrn": "urn:li:fsd_company:18286307",
+      "entityUrn": "urn:li:fsd_company:16248137",
       "logoResolutionResult": {
         "url": null,
         "vectorImage": {
-          "digitalmediaAsset": "urn:li:digitalmediaAsset:C560BAQEsApnPy1eH7A",
+          "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D0BAQHuwu4mMLXhEg",
           "attribution": null,
           "c2paManifestData": null,
           "$recipeTypes": [
@@ -5755,7 +5947,7 @@
               "$recipeTypes": [
                 "com.linkedin.39256c69f250871e18a7142b6bfcf308"
               ],
-              "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1655262712760/developer_academy_senac_logo?e=1738195200&v=beta&t=hRYNS3eUN69chwGrf5H07qL5GjSm9HJ1eCtyY6GLxq4",
+              "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1727980997469/omint_logo?e=1738195200&v=beta&t=MpZZnnBimhIwY0oFYNTS7h0BUzFoqtyZDg5DTc-9WN0",
               "expiresAt": 1738195200000,
               "height": 200,
               "$type": "com.linkedin.common.VectorArtifact"
@@ -5765,7 +5957,7 @@
               "$recipeTypes": [
                 "com.linkedin.39256c69f250871e18a7142b6bfcf308"
               ],
-              "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1655262712760/developer_academy_senac_logo?e=1738195200&v=beta&t=YCTp1m0t9XlNrHSkbYCxRbQt_uEyokPT3GK-c71lcT4",
+              "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1727980997469/omint_logo?e=1738195200&v=beta&t=fHa3PNPghm1y9qhBIbkd7I101uhQa6b7EbRLKa8-h7s",
               "expiresAt": 1738195200000,
               "height": 100,
               "$type": "com.linkedin.common.VectorArtifact"
@@ -5775,65 +5967,13 @@
               "$recipeTypes": [
                 "com.linkedin.39256c69f250871e18a7142b6bfcf308"
               ],
-              "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1655262712760/developer_academy_senac_logo?e=1738195200&v=beta&t=cwo0UKHN3zvLBpS_1x82nwfWF4gPVwxJDYb3lVsah98",
+              "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1727980997469/omint_logo?e=1738195200&v=beta&t=nNAMb8319-dSvLSSJylewFXApa0Fq_sgc-1sUe5iV9E",
               "expiresAt": 1738195200000,
               "height": 400,
               "$type": "com.linkedin.common.VectorArtifact"
             }
           ],
-          "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQEsApnPy1eH7A/company-logo_",
-          "$type": "com.linkedin.common.VectorImage"
-        }
-      },
-      "$recipeTypes": [
-        "com.linkedin.1525ab830ec9eb80e2da694032b18734"
-      ],
-      "$type": "com.linkedin.voyager.dash.organization.Company"
-    },
-    {
-      "entityUrn": "urn:li:fsd_company:70432394",
-      "logoResolutionResult": {
-        "url": null,
-        "vectorImage": {
-          "digitalmediaAsset": "urn:li:digitalmediaAsset:C4D0BAQEbrWWzItj0Bg",
-          "attribution": null,
-          "c2paManifestData": null,
-          "$recipeTypes": [
-            "com.linkedin.2de4b5abde13065217c519a7b2b07d9d"
-          ],
-          "artifacts": [
-            {
-              "width": 200,
-              "$recipeTypes": [
-                "com.linkedin.39256c69f250871e18a7142b6bfcf308"
-              ],
-              "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1630464669857?e=1738195200&v=beta&t=57yJNwS0FhtxnekM870dmd-luLDJR6JDE0sb44DnpR4",
-              "expiresAt": 1738195200000,
-              "height": 200,
-              "$type": "com.linkedin.common.VectorArtifact"
-            },
-            {
-              "width": 100,
-              "$recipeTypes": [
-                "com.linkedin.39256c69f250871e18a7142b6bfcf308"
-              ],
-              "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1630464669857?e=1738195200&v=beta&t=Amf1HO7czzMcIlvpevAExSSU9517efnUoruztNoKv7Y",
-              "expiresAt": 1738195200000,
-              "height": 100,
-              "$type": "com.linkedin.common.VectorArtifact"
-            },
-            {
-              "width": 400,
-              "$recipeTypes": [
-                "com.linkedin.39256c69f250871e18a7142b6bfcf308"
-              ],
-              "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1630464669857?e=1738195200&v=beta&t=Zxdd4mGhawCjmBOYMRciUld-6gm3ClLLUGq-4HvvehA",
-              "expiresAt": 1738195200000,
-              "height": 400,
-              "$type": "com.linkedin.common.VectorArtifact"
-            }
-          ],
-          "rootUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEbrWWzItj0Bg/company-logo_",
+          "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHuwu4mMLXhEg/company-logo_",
           "$type": "com.linkedin.common.VectorImage"
         }
       },
