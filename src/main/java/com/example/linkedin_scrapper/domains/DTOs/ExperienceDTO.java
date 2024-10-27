@@ -47,6 +47,51 @@ public class ExperienceDTO {
                         private Subtitle subtitle;
                         private Caption caption;
                         private Metadata metadata;
+                        private SubComponents subComponents;
+
+                        @Getter
+                        @Setter
+                        @ToString
+                        public static class SubComponents{
+                            @JsonProperty("components")
+                            private List<ComponentsList> componentsLists;
+
+                            @Getter
+                            @Setter
+                            @ToString
+                            public static class ComponentsList{
+                                private InnerComponent components;
+
+                                @Getter
+                                @Setter
+                                @ToString
+                                public static class InnerComponent{
+                                    @JsonProperty("fixedListComponent")
+                                    private FixedListComp fixedListComp;
+
+                                    @Getter
+                                    @Setter
+                                    @ToString
+                                    public static class FixedListComp{
+                                        private List<InnerComponentFixedList> components;
+
+                                        @Getter
+                                        @Setter
+                                        @ToString
+                                        public static class InnerComponentFixedList{
+                                            private InnerComponentFixed components;
+
+                                            @Getter
+                                            @Setter
+                                            @ToString
+                                            public static class InnerComponentFixed{
+                                                private Title textComponent;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
 
                         @Getter
                         @Setter
