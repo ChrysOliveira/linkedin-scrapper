@@ -51,6 +51,6 @@ public class ListPeopleClient implements IClient {
 //                .retrieve()
 //                .body(String.class);
 
-        return Utils.retornaJson("anotacoes/lista.json");
+        return Utils.retornaJson("jsons/lista.json");
     }
 }
