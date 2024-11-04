@@ -27,6 +27,14 @@ Once we have the linkedin ID in the hands, we can get details of the experience 
                     - PERIOD: included[0].components.elements[0].components.entityComponent.caption.text (formato: <inicio> - <fim> · <tamanho periodo> VALORES DESCRITIVOS)
                     - LOCATION: included[0].components.elements[0].components.entityComponent.metadata.text (formato: <Cidade>, <Estado>, <Pais> · <formato trabalho PRESENCIAL, REMOTO>)
                     - DESCRIPTION: included[0].components.elements[1].components.entityComponent.subComponents.components[0].components.fixedListComponent.components[0].components.textComponent.text.text (para pegar a descricao na ordem, mexemos no index do elements[i])
+
     education:
+        - list of education: included[0].components.elements
+            - for each element:
+                - go to "components" -> "entityComponent":
+                     - PERIOD: included[0].components.elements[0].components.entityComponent.caption.text (formato: <inicio> - <fim> · <tamanho periodo> VALORES DESCRITIVOS)
+                     - COLLEGE: included[0].components.elements[0].components.entityComponent.titleV2.text.text (formato: <nome da instituicao>)
+                     - COURSE: included[0].components.elements[0].components.entityComponent.subtitle.text (formato: <nome do curso>)
+                     - DESCRIPTION: included[0].components.elements[0].components.entityComponent.subComponents.components[0].components.fixedListComponent.components[0].components.textComponent.text.text (mesma logica do experience, verificar nulos)
 
     skills:

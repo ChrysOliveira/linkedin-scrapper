@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "experiences")
 public class ExperienceEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String company;
     private String workload;

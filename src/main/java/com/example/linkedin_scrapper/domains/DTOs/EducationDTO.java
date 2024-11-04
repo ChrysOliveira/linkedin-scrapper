@@ -10,13 +10,13 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ExperienceDTO {
-    private List<ExperienceData> included;
+public class EducationDTO {
+    private List<EducationData> included;
 
     @Getter
     @Setter
     @ToString
-    public static class ExperienceData {
+    public static class EducationData {
         private Components components;
         private String decorationType;
 

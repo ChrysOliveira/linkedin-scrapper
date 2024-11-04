@@ -1,6 +1,8 @@
 package com.example.linkedin_scrapper.domains.mapper;
 
+import com.example.linkedin_scrapper.domains.DTOs.EducationDTO;
 import com.example.linkedin_scrapper.domains.DTOs.ExperienceDTO;
+import com.example.linkedin_scrapper.domains.entities.EducationEntity;
 import com.example.linkedin_scrapper.domains.entities.ExperienceEntity;
 import com.example.linkedin_scrapper.domains.entities.UserEntity;
 import org.springframework.stereotype.Component;
@@ -8,27 +10,25 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 @Component
-public class ExperienceMapper {
-    public ExperienceEntity ExperienceDataToExperienceEntity(ExperienceDTO.ExperienceData.Components.Elements extracted, UserEntity userEntity){
-        String infoCompany = extracted
-                .getComponentsInner()
-                .getEntityComponent()
-                .getSubtitle()
-                .getText();
-
-        String company = infoCompany.split(" · ")[0];
-        String workload = infoCompany.split(" · ")[1];
-
+public class EducationMapper {
+    public EducationEntity EducationDataToEducationEntity(EducationDTO.EducationData.Components.Elements extracted, UserEntity userEntity){
         String period = extracted
                 .getComponentsInner()
                 .getEntityComponent()
                 .getCaption()
                 .getText();
 
-        String location = extracted
+        String college = extracted
                 .getComponentsInner()
                 .getEntityComponent()
-                .getMetadata()
+                .getTitle()
+                .getText()
+                .getText();
+
+        String course = extracted
+                .getComponentsInner()
+                .getEntityComponent()
+                .getSubtitle()
                 .getText();
 
         StringBuilder description = new StringBuilder();
@@ -41,8 +41,9 @@ public class ExperienceMapper {
                     .getComponentsLists()
                     .size();
 
+
             for(int i = 0; i < lengthComponentsDescription; i++){
-                description.append(extracted
+                int validationSize = extracted
                         .getComponentsInner()
                         .getEntityComponent()
                         .getSubComponents()
@@ -51,20 +52,32 @@ public class ExperienceMapper {
                         .getComponents()
                         .getFixedListComp()
                         .getComponents()
-                        .get(0)
-                        .getComponents()
-                        .getTextComponent()
-                        .getText()
-                        .getText()
-                );
+                        .size();
+
+                if (validationSize > 0){
+                    description.append(extracted
+                            .getComponentsInner()
+                            .getEntityComponent()
+                            .getSubComponents()
+                            .getComponentsLists()
+                            .get(i)
+                            .getComponents()
+                            .getFixedListComp()
+                            .getComponents()
+                            .get(0)
+                            .getComponents()
+                            .getTextComponent()
+                            .getText()
+                            .getText()
+                    );
+                }
             }
         }
 
-        return ExperienceEntity.builder()
-                .company(company)
-                .workload(workload)
+        return EducationEntity.builder()
                 .period(period)
-                .location(location)
+                .college(college)
+                .course(course)
                 .description(description.toString())
                 .user(userEntity)
                 .createdAt(LocalDateTime.now())

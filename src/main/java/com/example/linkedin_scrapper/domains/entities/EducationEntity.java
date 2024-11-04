@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "educations")
 public class EducationEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String course;
     private String college;
