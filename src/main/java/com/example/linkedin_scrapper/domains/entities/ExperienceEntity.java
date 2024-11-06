@@ -21,6 +21,7 @@ public class ExperienceEntity {
     private String workload;
     private String period;
     private String location;
+    @Column(columnDefinition = "TEXT")
     private String description;
     @ManyToOne
     private UserEntity user;

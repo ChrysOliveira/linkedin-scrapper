@@ -30,8 +30,8 @@ public class LinkedinScrapperApplication {
     public CommandLineRunner demo() {
         return (args) -> {
             //userService.blabla();
-            //experienceService.requestExperience();
-            educationService.requestEducation();
+            experienceService.requestExperience();
+//            educationService.requestEducation();
         };
     }
 }
