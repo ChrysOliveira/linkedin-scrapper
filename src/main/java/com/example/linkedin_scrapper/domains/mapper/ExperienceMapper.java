@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 public class ExperienceMapper {
-    public ExperienceEntity ExperienceDataToExperienceEntity(ExperienceDTO.ExperienceData.Components.Elements extracted, UserEntity userEntity) {
+    public ExperienceEntity ExperienceDataToExperienceEntitySingleTitle(ExperienceDTO.ExperienceData.Components.Elements extracted, UserEntity userEntity) {
         String infoCompany = extracted
                 .getComponentsInner()
                 .getEntityComponent()
@@ -38,6 +38,7 @@ public class ExperienceMapper {
 
         location = metadata != null ? metadata.getText() : "";
 
+        // TODO: identificar quando estamos falando de competencias ou quando estamos falando de descricao de fato
         StringBuilder description = new StringBuilder();
 
         if (extracted.getComponentsInner().getEntityComponent().getSubComponents() != null) {
@@ -82,5 +83,80 @@ public class ExperienceMapper {
                 .user(userEntity)
                 .createdAt(LocalDateTime.now())
                 .build();
+    }
+
+    public List<ExperienceEntity> ExperienceDataToExperienceEntityMultiTitle(ExperienceDTO experienceDTO, ExperienceDTO.ExperienceData.Components.Elements extracted, UserEntity userEntity) {
+
+        ExperienceDTO.ExperienceData experienceDataDetails = experienceDTO.getIncluded().stream()
+                .filter(decorationType -> decorationType.getDecorationType() != null
+                        && !decorationType.getDecorationType().equals("LINE_SEPARATED"))
+                .filter(included -> included.getComponents().getElements().stream().anyMatch(
+                        element -> element.getComponentsInner().getEntityComponent().getTextActionTarget().equals(extracted.getComponentsInner().getEntityComponent().getTextActionTarget())))
+                .findFirst()
+                .orElse(null);
+
+        String company = extracted
+                .getComponentsInner()
+                .getEntityComponent()
+                .getTitle()
+                .getText()
+                .getText();
+
+        String workload = "";
+
+        // TODO: adicionar uma coluna para pegar o tempo total na empresa (somatorio de todos os cargos NAO ESQUECER: pode ter dois cargos ao mesmo tempo)
+        String period = extracted
+                .getComponentsInner()
+                .getEntityComponent()
+                .getCaption()
+                .getText();
+
+
+        String location = extracted.getComponentsInner().getEntityComponent().getCaption().getText();
+
+        StringBuilder description = new StringBuilder();
+
+        if (extracted.getComponentsInner().getEntityComponent().getSubComponents() != null) {
+            int lengthComponentsDescription = extracted
+                    .getComponentsInner()
+                    .getEntityComponent()
+                    .getSubComponents()
+                    .getComponentsLists()
+                    .size();
+
+            for (int i = 0; i < lengthComponentsDescription; i++) {
+                ExperienceDTO.ExperienceData.Components.Elements.ComponentsInner.EntityComponent.SubComponents.ComponentsList.InnerComponent.FixedListComp fixedListComp = extracted
+                        .getComponentsInner()
+                        .getEntityComponent()
+                        .getSubComponents()
+                        .getComponentsLists()
+                        .get(i)
+                        .getComponents()
+                        .getFixedListComp();
+                List<ExperienceDTO.ExperienceData.Components.Elements.ComponentsInner.EntityComponent.SubComponents.ComponentsList.InnerComponent.FixedListComp.InnerComponentFixedList> components = null;
+
+                if (fixedListComp != null) {
+                    components = fixedListComp.getComponents();
+                }
+                if (components != null) {
+                    description.append(components
+                            .get(0)
+                            .getComponents()
+                            .getTextComponent()
+                            .getText()
+                            .getText());
+                }
+            }
+        }
+
+        return List.of(ExperienceEntity.builder()
+                .company(company)
+                .workload(workload)
+                .period(period)
+                .location(location)
+                .description(description.toString())
+                .user(userEntity)
+                .createdAt(LocalDateTime.now())
+                .build());
     }
 }

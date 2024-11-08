@@ -31,17 +31,23 @@ public class ExperienceService {
         RestClient restClient = experienceClient.getRestClient();
         var result = experienceClient.execRestClient(restClient, "");
         ExperienceDTO experienceDTO = objectMapper.readValue(result, ExperienceDTO.class);
-        List<ExperienceDTO.ExperienceData> experienceDataList = experienceDTO.getIncluded().stream().filter(decorationType -> decorationType.getDecorationType() != null
-                && decorationType.getDecorationType().equals("LINE_SEPARATED")).toList();
+        ExperienceDTO.ExperienceData experienceData = experienceDTO.getIncluded().stream()
+                .filter(decorationType -> decorationType.getDecorationType() != null
+                        && decorationType.getDecorationType().equals("LINE_SEPARATED"))
+                .findFirst()
+                .orElse(null);
 
-        for (ExperienceDTO.ExperienceData experienceData : experienceDataList){
-            for(ExperienceDTO.ExperienceData.Components.Elements elements: experienceData.getComponents().getElements()){
-                ExperienceEntity experienceEntity = experienceMapper.ExperienceDataToExperienceEntity(elements, null);
+        for (ExperienceDTO.ExperienceData.Components.Elements element : experienceData.getComponents().getElements()) {
+            if (element.getComponentsInner().getEntityComponent().getMetadata() != null) {
+                ExperienceEntity experienceEntity = experienceMapper.ExperienceDataToExperienceEntitySingleTitle(element, null);
                 experienceRepository.save(experienceEntity);
+            } else {
+                List<ExperienceEntity> experienceEntities = experienceMapper.ExperienceDataToExperienceEntityMultiTitle(experienceDTO, element, null);
+                experienceRepository.saveAll(experienceEntities);
             }
         }
 
-        System.out.println(experienceDataList);
+        System.out.println(experienceData);
     }
 
 }

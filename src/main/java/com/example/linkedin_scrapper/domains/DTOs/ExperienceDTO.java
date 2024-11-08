@@ -32,6 +32,7 @@ public class ExperienceDTO {
             public static class Elements{
                 @JsonProperty("components")
                 private ComponentsInner componentsInner;
+                private Components.Elements.ComponentsInner.EntityComponent entityComponent;
 
                 @Getter
                 @Setter
@@ -49,6 +50,7 @@ public class ExperienceDTO {
                         private Caption caption;
                         private Metadata metadata;
                         private SubComponents subComponents;
+                        private String textActionTarget;
 
                         @Getter
                         @Setter
