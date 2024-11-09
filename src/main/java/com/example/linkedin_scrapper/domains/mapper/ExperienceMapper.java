@@ -6,6 +6,7 @@ import com.example.linkedin_scrapper.domains.entities.UserEntity;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -87,6 +88,22 @@ public class ExperienceMapper {
 
     public List<ExperienceEntity> ExperienceDataToExperienceEntityMultiTitle(ExperienceDTO experienceDTO, ExperienceDTO.ExperienceData.Components.Elements extracted, UserEntity userEntity) {
 
+        String company = extracted
+                .getComponentsInner()
+                .getEntityComponent()
+                .getTitle()
+                .getText()
+                .getText();
+
+        // TODO: adicionar uma coluna para pegar o tempo total na empresa (somatorio de todos os cargos NAO ESQUECER: pode ter dois cargos ao mesmo tempo)
+//        String period = extracted
+//                .getComponentsInner()
+//                .getEntityComponent()
+//                .getCaption()
+//                .getText();
+
+        String location =  extracted.getComponentsInner().getEntityComponent().getCaption() != null ? extracted.getComponentsInner().getEntityComponent().getCaption().getText() : "";
+
         ExperienceDTO.ExperienceData experienceDataDetails = experienceDTO.getIncluded().stream()
                 .filter(decorationType -> decorationType.getDecorationType() != null
                         && !decorationType.getDecorationType().equals("LINE_SEPARATED"))
@@ -95,24 +112,21 @@ public class ExperienceMapper {
                 .findFirst()
                 .orElse(null);
 
-        String company = extracted
-                .getComponentsInner()
-                .getEntityComponent()
-                .getTitle()
-                .getText()
-                .getText();
+        List<ExperienceDTO.ExperienceData.Components.Elements> elements = experienceDataDetails.getComponents().getElements();
 
-        String workload = "";
+        List<ExperienceEntity> experienceEntities = new ArrayList<>();
 
-        // TODO: adicionar uma coluna para pegar o tempo total na empresa (somatorio de todos os cargos NAO ESQUECER: pode ter dois cargos ao mesmo tempo)
-        String period = extracted
-                .getComponentsInner()
-                .getEntityComponent()
-                .getCaption()
-                .getText();
-
-
-        String location = extracted.getComponentsInner().getEntityComponent().getCaption().getText();
+        elements.forEach(element -> {
+            experienceEntities.add(ExperienceEntity.builder()
+                    .company(company)
+                    .createdAt(LocalDateTime.now())
+                    .description(element.getComponentsInner().getEntityComponent().getSubComponents().getComponentsLists().get(0).getComponents().getFixedListComp().getComponents().get(0).getComponents().getTextComponent().getText().getText())
+                    .period(element.getComponentsInner().getEntityComponent().getCaption().getText())
+                    .location(location)
+                    .period(element.getComponentsInner().getEntityComponent().getCaption().getText())
+                    .workload( element.getComponentsInner().getEntityComponent().getSubtitle() != null ? element.getComponentsInner().getEntityComponent().getSubtitle().getText() : "")
+                    .build());
+        });
 
         StringBuilder description = new StringBuilder();
 
@@ -149,14 +163,6 @@ public class ExperienceMapper {
             }
         }
 
-        return List.of(ExperienceEntity.builder()
-                .company(company)
-                .workload(workload)
-                .period(period)
-                .location(location)
-                .description(description.toString())
-                .user(userEntity)
-                .createdAt(LocalDateTime.now())
-                .build());
+        return experienceEntities;
     }
 }
