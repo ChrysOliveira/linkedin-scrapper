@@ -23,26 +23,26 @@ public class EducationDTO {
         @Getter
         @Setter
         @ToString
-        public static class Components{
+        public static class Components {
             private List<Elements> elements;
 
             @Getter
             @Setter
             @ToString
-            public static class Elements{
+            public static class Elements {
                 @JsonProperty("components")
                 private ComponentsInner componentsInner;
 
                 @Getter
                 @Setter
                 @ToString
-                public static class ComponentsInner{
+                public static class ComponentsInner {
                     private EntityComponent entityComponent;
 
                     @Getter
                     @Setter
                     @ToString
-                    public static  class EntityComponent{
+                    public static class EntityComponent {
                         @JsonProperty("titleV2")
                         private Title title;
                         private Subtitle subtitle;
@@ -53,39 +53,61 @@ public class EducationDTO {
                         @Getter
                         @Setter
                         @ToString
-                        public static class SubComponents{
+                        public static class SubComponents {
                             @JsonProperty("components")
                             private List<ComponentsList> componentsLists;
 
                             @Getter
                             @Setter
                             @ToString
-                            public static class ComponentsList{
+                            public static class ComponentsList {
                                 private InnerComponent components;
 
                                 @Getter
                                 @Setter
                                 @ToString
-                                public static class InnerComponent{
+                                public static class InnerComponent {
                                     @JsonProperty("fixedListComponent")
                                     private FixedListComp fixedListComp;
+                                    private InsightComp insightComponent;
 
                                     @Getter
                                     @Setter
                                     @ToString
-                                    public static class FixedListComp{
+                                    public static class InsightComp {
+                                        private Title text;
+
+                                        @Getter
+                                        @Setter
+                                        @ToString
+                                        public static class Title {
+                                            private Text text;
+
+                                            @Getter
+                                            @Setter
+                                            @ToString
+                                            public static class Text {
+                                                private String text;
+                                            }
+                                        }
+                                    }
+
+                                    @Getter
+                                    @Setter
+                                    @ToString
+                                    public static class FixedListComp {
                                         private List<InnerComponentFixedList> components;
 
                                         @Getter
                                         @Setter
                                         @ToString
-                                        public static class InnerComponentFixedList{
+                                        public static class InnerComponentFixedList {
                                             private InnerComponentFixed components;
 
                                             @Getter
                                             @Setter
                                             @ToString
-                                            public static class InnerComponentFixed{
+                                            public static class InnerComponentFixed {
                                                 private Title textComponent;
                                             }
                                         }
@@ -97,21 +119,21 @@ public class EducationDTO {
                         @Getter
                         @Setter
                         @ToString
-                        public static class Metadata{
+                        public static class Metadata {
                             private String text;
                         }
 
                         @Getter
                         @Setter
                         @ToString
-                        public static class Subtitle{
+                        public static class Subtitle {
                             private String text;
                         }
 
                         @Getter
                         @Setter
                         @ToString
-                        public static class Caption{
+                        public static class Caption {
                             private String text;
                         }
 
@@ -119,13 +141,13 @@ public class EducationDTO {
                         @Getter
                         @Setter
                         @ToString
-                        public static  class Title{
+                        public static class Title {
                             private Text text;
 
                             @Getter
                             @Setter
                             @ToString
-                            public static  class Text{
+                            public static class Text {
                                 private String text;
                             }
                         }

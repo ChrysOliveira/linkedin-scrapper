@@ -34,7 +34,7 @@ public class LinkedinScrapperApplication {
     @Bean
     public CommandLineRunner demo() {
         return (args) -> {
-            Integer year = 2000;
+            Integer year = 2024;
 
             log.info("Starting...");
 
@@ -46,6 +46,7 @@ public class LinkedinScrapperApplication {
             for (UserEntity userEntity : userEntities) {
                 log.info("Retrieving info of user: {}", userEntity);
                 experienceService.requestExperience(userEntity);
+                Thread.sleep(1000);
                 educationService.requestEducation(userEntity);
             }
             log.info("Requesting new page");

@@ -20,6 +20,7 @@ public class EducationEntity {
     private String course;
     private String college;
     private String period;
+    @Column(columnDefinition = "TEXT")
     private String description;
     @ManyToOne
     private UserEntity user;

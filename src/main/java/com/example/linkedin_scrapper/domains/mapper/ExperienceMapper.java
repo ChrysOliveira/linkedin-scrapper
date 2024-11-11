@@ -65,6 +65,9 @@ public class ExperienceMapper {
                     components = fixedListComp.getComponents();
                 }
                 if (components != null) {
+                    if (components.get(0).getComponents().getTextComponent() == null) {
+                        continue;
+                    }
                     description.append(components
                             .get(0)
                             .getComponents()

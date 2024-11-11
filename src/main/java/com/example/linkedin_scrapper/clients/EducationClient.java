@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
+import java.net.URI;
+
 @Component
 @Slf4j
 public class EducationClient {
@@ -33,9 +35,12 @@ public class EducationClient {
 
     public String execRestClient(RestClient restClient, String linkedinId) {
         log.info("retrieving education of linkedinId: {}", linkedinId);
+
+        URI uri = URI.create("https://www.linkedin.com/voyager/api/graphql?includeWebMetadata=true&variables=(profileUrn:urn%3Ali%3Afsd_profile%3" + linkedinId + ",sectionType:education,locale:pt_BR)&queryId=voyagerIdentityDashProfileComponents.8870d56cb9c3fc30759e093dff132b3e");
+
         return restClient
                 .get()
-                .uri("https://www.linkedin.com/voyager/api/graphql?includeWebMetadata=true&variables=(profileUrn:urn%3Ali%3Afsd_profile%3{linkedinId},sectionType:education,locale:pt_BR)&queryId=voyagerIdentityDashProfileComponents.8870d56cb9c3fc30759e093dff132b3e", linkedinId)
+                .uri(uri)
                 .retrieve()
                 .body(String.class);
 //        return Utils.retornaJson("jsons/education_chrys.json");

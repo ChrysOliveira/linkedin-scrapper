@@ -11,12 +11,14 @@ import java.time.LocalDateTime;
 
 @Component
 public class EducationMapper {
-    public EducationEntity EducationDataToEducationEntity(EducationDTO.EducationData.Components.Elements extracted, UserEntity userEntity){
+    public EducationEntity EducationDataToEducationEntity(EducationDTO.EducationData.Components.Elements extracted, UserEntity userEntity) {
         String period = extracted
                 .getComponentsInner()
                 .getEntityComponent()
-                .getCaption()
-                .getText();
+                .getCaption() != null ? extracted
+                .getComponentsInner()
+                .getEntityComponent()
+                .getCaption().getText() : "";
 
         String college = extracted
                 .getComponentsInner()
@@ -28,12 +30,14 @@ public class EducationMapper {
         String course = extracted
                 .getComponentsInner()
                 .getEntityComponent()
-                .getSubtitle()
-                .getText();
+                .getSubtitle() != null ? extracted
+                .getComponentsInner()
+                .getEntityComponent()
+                .getSubtitle().getText() : "";
 
         StringBuilder description = new StringBuilder();
 
-        if(extracted.getComponentsInner().getEntityComponent().getSubComponents() != null){
+        if (extracted.getComponentsInner().getEntityComponent().getSubComponents() != null) {
             int lengthComponentsDescription = extracted
                     .getComponentsInner()
                     .getEntityComponent()
@@ -42,20 +46,10 @@ public class EducationMapper {
                     .size();
 
 
-            for(int i = 0; i < lengthComponentsDescription; i++){
-                int validationSize = extracted
-                        .getComponentsInner()
-                        .getEntityComponent()
-                        .getSubComponents()
-                        .getComponentsLists()
-                        .get(i)
-                        .getComponents()
-                        .getFixedListComp()
-                        .getComponents()
-                        .size();
-
-                if (validationSize > 0){
-                    description.append(extracted
+            for (int i = 0; i < lengthComponentsDescription; i++) {
+                int validationSize = 0;
+                if (extracted.getComponentsInner().getEntityComponent().getSubComponents().getComponentsLists().get(i).getComponents().getFixedListComp() != null) {
+                    validationSize = extracted
                             .getComponentsInner()
                             .getEntityComponent()
                             .getSubComponents()
@@ -64,12 +58,50 @@ public class EducationMapper {
                             .getComponents()
                             .getFixedListComp()
                             .getComponents()
-                            .get(0)
+                            .size();
+
+                    if (validationSize > 0) {
+                        if (extracted.getComponentsInner().getEntityComponent().getSubComponents().getComponentsLists().get(i).getComponents().getFixedListComp().getComponents().get(0).getComponents().getTextComponent() != null) {
+                            description.append(extracted
+                                    .getComponentsInner()
+                                    .getEntityComponent()
+                                    .getSubComponents()
+                                    .getComponentsLists()
+                                    .get(i)
+                                    .getComponents()
+                                    .getFixedListComp()
+                                    .getComponents()
+                                    .get(0)
+                                    .getComponents()
+                                    .getTextComponent()
+                                    .getText()
+                                    .getText());
+                        }
+                    }
+                } else if (extracted.getComponentsInner().getEntityComponent().getSubComponents().getComponentsLists().get(i).getComponents().getInsightComponent() != null) {
+                    validationSize = extracted
+                            .getComponentsInner()
+                            .getEntityComponent()
+                            .getSubComponents()
+                            .getComponentsLists()
+                            .get(i)
                             .getComponents()
-                            .getTextComponent()
-                            .getText()
-                            .getText()
-                    );
+                            .getInsightComponent()
+                            .getText() != null ? 1 : 0;
+
+                    if (validationSize > 0) {
+                        description.append(extracted
+                                .getComponentsInner()
+                                .getEntityComponent()
+                                .getSubComponents()
+                                .getComponentsLists()
+                                .get(i)
+                                .getComponents()
+                                .getInsightComponent()
+                                .getText()
+                                .getText()
+                                .getText());
+                    }
                 }
             }
         }

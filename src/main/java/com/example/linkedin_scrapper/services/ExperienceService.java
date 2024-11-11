@@ -41,6 +41,10 @@ public class ExperienceService {
                 .findFirst()
                 .orElse(null);
 
+        if (experienceData == null) {
+            return;
+        }
+
         for (ExperienceDTO.ExperienceData.Components.Elements element : experienceData.getComponents().getElements()) {
 
             if (element.getComponentsInner().getEntityComponent() == null) {
