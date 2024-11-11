@@ -29,7 +29,7 @@ public class ExperienceService {
     }
 
     public void requestExperience(UserEntity user) throws JsonProcessingException {
-        RestClient restClient = experienceClient.getRestClient();
+        RestClient restClient = experienceClient.getRestClient(user);
 
         var result = experienceClient.execRestClient(restClient, user.getLinkedinId());
 
@@ -42,6 +42,11 @@ public class ExperienceService {
                 .orElse(null);
 
         for (ExperienceDTO.ExperienceData.Components.Elements element : experienceData.getComponents().getElements()) {
+
+            if (element.getComponentsInner().getEntityComponent() == null) {
+                return;
+            }
+
             if (element.getComponentsInner().getEntityComponent().getMetadata() != null) {
                 ExperienceEntity experienceEntity = experienceMapper.ExperienceDataToExperienceEntitySingleTitle(element, user);
                 experienceRepository.save(experienceEntity);

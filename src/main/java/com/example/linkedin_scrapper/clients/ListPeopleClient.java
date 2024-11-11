@@ -5,52 +5,35 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
 @Component
-public class ListPeopleClient implements IClient {
-    @Override
-    public RestClient getRestClient() {
+public class ListPeopleClient {
+    public RestClient getRestClient(Integer year) {
         return RestClient.builder()
-                .defaultHeader("accept", "application/vnd.linkedin.normalized+json+2.1")
-                .defaultHeader("accept-language", "en-US,en;q=0.9")
-                .defaultHeader("cookie", "bcookie=\"v=2&bbc2dbef-d1e4-40e4-8a87-3a46bc9ee6e3\"; bscookie=\"v=1&20240922200257dc31583b-4819-4106-815d-e3c822446491AQFY2qBlPRJFQQKz0ikBMVN0FwOZ_gIp\"; AMCVS_14215E3D5995C57C0A495C55%40AdobeOrg=1; aam_uuid=06788333209324291891685683794077001508; g_state={\"i_l\":0}; liap=true; li_at=AQEDAVKA8HoFeHyOAAABkhtUxZsAAAGSP2FJm1YABor0m1b7jInIbQPb04V3xYaZQesdFQaBF6TH0Q9VjZ8amU_bQiriBh9D0FuVyHSQHuJc000SRgcj5f0eU366ieEs1dcYyBi7Jmrz9H--xLUyEyxi; JSESSIONID=\"ajax:0612869958973341761\"; timezone=America/Sao_Paulo; li_theme=light; li_theme_set=app; li_sugr=a5088b8a-035b-4ba2-bc6c-b749cdbff55f; _guid=58940cf4-0c14-492d-9406-bb2fc54ee605; AnalyticsSyncHistory=AQJS76T_8K9pBwAAAZIbVNdu6jW266-niejiZoc3-ZA9ImJwOPsgwqz3WXaw7ZGkgtaiWoBV05coxG3hJfeM5g; lms_ads=AQFaBinwbEKDUwAAAZIbVNh2JV_LMuzk2c5_cvBJT_RMrwFun_9ExqHPIsl_l8a-GXsVM0BIVaemJgj2xLTvhS3F4YvQ4_c5; lms_analytics=AQFaBinwbEKDUwAAAZIbVNh2JV_LMuzk2c5_cvBJT_RMrwFun_9ExqHPIsl_l8a-GXsVM0BIVaemJgj2xLTvhS3F4YvQ4_c5; dfpfpt=78fed44cdf8042679224442f8bb3ffe7; fptctx2=taBcrIH61PuCVH7eNCyH0J9Fjk1kZEyRnBbpUW3FKs%252fZadVzCF%252bSLaqN2%252f13i7oSleBYfWciJuHEHRTSbyOd4HV3xqixeHtem8%252bqr3CoA6HWkPgBuf4wV0uCJKEgz3qlyvah%252fiSaIKYiPVAWNJCg2pj1oRY%252fvzmbmiEK81cQ1TG24%252bRxeWPdifISVH%252fF%252bszG250AqpPDklfx3g0bgFRovWF55LTvqPFBpEXEfZerElobWkwDn9gWuPg0MapA1SQFupsVY54jX1uEY3miJYKQreTyK3kH%252feQU0EnI2%252fWDOi6gElprifVbwwCodRqjQ6l0vr0z6W5gZbDxCz75OBrOEcSwnKRZcHvz67VzPV6%252fJJQ%253d; AMCV_14215E3D5995C57C0A495C55%40AdobeOrg=-637568504%7CMCIDTS%7C19989%7CMCMID%7C06948522633285299981705719969853297903%7CMCAAMLH-1727647388%7C4%7CMCAAMB-1727647388%7C6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y%7CMCOPTOUT-1727049788s%7CNONE%7CvVersion%7C5.1.1%7CMCCIDH%7C1921669772; PLAY_LANG=pt; lang=v=2&lang=pt-BR; PLAY_SESSION=eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7InNlc3Npb25faWQiOiJjNmUxNmViZC1hNTFmLTRiZmMtYTgyNC0xNDZmZjM5ZTA0Yzl8MTcyNzA0Mjg0NiIsImFsbG93bGlzdCI6Int9IiwicmVjZW50bHktc2VhcmNoZWQiOiIiLCJyZWZlcnJhbC11cmwiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaGVscC9saW5rZWRpbi9hbnN3ZXIvYTUyMDUwNC9hY2NvdW50LW5ldHdvcmstYmxvY2tlZCUzRmxhbmclM0RlbiIsInJlY2VudGx5LXZpZXdlZCI6IiIsIkNQVC1pZCI6IsKCwppuw4vCqsOcwplFw4RVacK1XHLDq2_DoyIsImV4cGVyaWVuY2UiOiIiLCJ0cmsiOiIifSwibmJmIjoxNzI3MDQyODQ2LCJpYXQiOjE3MjcwNDI4NDZ9.HWAVK5rvRQ4b6Tm0AdUcSTOTv6LFCFuj8NijLw_7z94; UserMatchHistory=AQKf58m6GnhFuAAAAZIb3_w4aiR_FZrelBLYcGm8C84U857nZGvCr0UKdB3F8GkqPIrPnyvewE4EH8yK2ujFZKYo5QXfpFiLT60V_WgY9wbGOzxGu32892iqB2c-X276Bn13_SjRuZGaQ1zIAWYeFUD3E-2s3zHakmS-h3ASf6llYbxPUxsoYPtZk-IOkMGMK6EtVVzKBR3mSLi02zxkwPMaiAHz_McOOrc9Ncpu1cvNUhG-WfACbw9CZ7Eqxlm5n7_Kasp2IPYqxB0tx_sQT5_KsiAVl8YPB8uT1osH6gWvffTxUOiJ4CXQ79eACMKgy7F6Y8v75IljgovfSoHjKy-KSzd776B3B00QkAxWpRhnZ43qBA; lidc=\"b=TB82:s=T:r=T:a=T:p=T:g=8392:u=4:x=1:i=1727044519:t=1727121499:v=2:sig=AQH0BmpRFe2rLVPErTSwe7soffq6h8HZ\"; __cf_bm=to4_axa2GANOfZHD2gbB89BFbpvUYo1ANusvNKZrtZw-1727319050-1.0.1.1-WNf1c8yiZ20ttiLxMMYsxfihidZD0_UagdFmpqeYBzLxzfndvrOB3jrqbaCWZYx1ovAObptODlA4tMEvmrgqDg; lidc=\"b=VB82:s=V:r=V:a=V:p=V:g=9440:u=5:x=1:i=1727319049:t=1727320909:v=2:sig=AQHJ_aOzqgDiv4GGaSnwO_EkEngheQED\"")
-                .defaultHeader("csrf-token", "ajax:0612869958973341761")
-                .defaultHeader("dnt", "1")
-                .defaultHeader("priority", "u=1, i")
-                .defaultHeader("referer", "https://www.linkedin.com/school/centrouniversitariosenac/people/")
-                .defaultHeader("sec-ch-ua", "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"")
-                .defaultHeader("sec-ch-ua-mobile", "?0")
-                .defaultHeader("sec-ch-ua-platform", "\"Linux\"")
-                .defaultHeader("sec-fetch-dest", "empty")
-                .defaultHeader("sec-fetch-mode", "cors")
-                .defaultHeader("sec-fetch-site", "same-origin")
-                .defaultHeader("user-agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
+                .defaultHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0")
+                .defaultHeader("Accept", "application/vnd.linkedin.normalized+json+2.1")
+                .defaultHeader("Accept-Language", "en-US,en;q=0.5")
+                .defaultHeader("Accept-Encoding", "gzip, deflate, br, zstd")
                 .defaultHeader("x-li-lang", "pt_BR")
-                .defaultHeader("x-li-page-instance", "urn:li:page:d_flagship3_university;2zteXoiJSWqifTPxWF/2tg==")
-                .defaultHeader("x-li-pem-metadata", "Voyager - Organization - Member=organization-people-card")
-                .defaultHeader("x-li-track", "{\"clientVersion\":\"1.13.23589\",\"mpVersion\":\"1.13.23589\",\"osName\":\"web\",\"timezoneOffset\":-3,\"timezone\":\"America/Sao_Paulo\",\"deviceFormFactor\":\"DESKTOP\",\"mpName\":\"voyager-web\",\"displayDensity\":1,\"displayWidth\":1920,\"displayHeight\":1080}")
+                .defaultHeader("x-li-track", "{\"clientVersion\":\"1.13.26206\",\"mpVersion\":\"1.13.26206\",\"osName\":\"web\",\"timezoneOffset\":-3,\"timezone\":\"America/Sao_Paulo\",\"deviceFormFactor\":\"DESKTOP\",\"mpName\":\"voyager-web\",\"displayDensity\":1,\"displayWidth\":1920,\"displayHeight\":1080}")
+                .defaultHeader("x-li-page-instance", "urn:li:page:schools_school_people_index;3a6b894c-8a1e-418b-91bd-64279c6dca48")
+                .defaultHeader("csrf-token", "ajax:5281613647973076274")
                 .defaultHeader("x-restli-protocol-version", "2.0.0")
-                .defaultHeader("Accept-Encoding", "gzip, deflate, br")
+                .defaultHeader("x-li-pem-metadata", "Voyager - Organization - Member=organization-people-card")
                 .defaultHeader("Connection", "keep-alive")
+                .defaultHeader("Referer", "https://www.linkedin.com/school/centrouniversitariosenac/people/?educationEndYear=" + year + "&educationStartYear=" + year)
+                .defaultHeader("Cookie", "bcookie=\"v=2&dd15fc0b-3337-407c-84a0-e0c9a6c122d9\"; bscookie=\"v=1&202409221551572fbab6aa-add1-46e8-850c-f56b316cc919AQE2p8gM8KXk1-fDIY25uOUKEFq9cOGq\"; AMCV_14215E3D5995C57C0A495C55%40AdobeOrg=-637568504%7CMCIDTS%7C20039%7CMCMID%7C07424648146352512898887572084229809590%7CMCOPTOUT-1731294339s%7CNONE%7CvVersion%7C5.1.1; timezone=America/Sao_Paulo; li_theme=system; li_theme_set=user; UserMatchHistory=AQKJKsPvl01nOAAAAZMYeBubUij4_a2WmN-GFHJfq8LfIBPSk-ZnBP-bYZ9gcrerf4OGFUAAxiXqWLXkR_vJUGlLUh_d7spTLONvJWGv67LeyoyomOO9_eZ5opVU_jA-ifORskVTCHsTAIOULXL8TcDEw9-zk-hGP82qzHvyWhZuflz5_Z77zxHeXWtisjw4TFUbepIt5RUNQDPVW21PR-B-x6rpiMc12L4hTHUGHb1afYfc6uJEGDO1MbVfD4F5QQLHXlKf43N1F6dS4dscKc8khgjO5vx1zI0aStqiJYGrTumFzWoNKgaxd-LiJblxukOFGMQ_P_ZFn7CmuYMo; dfpfpt=9dfa658671d441b9987c7baf5b0e6ce9; li_rm=AQHiQVMs7jN69wAAAZI5OQnUxgq2FMLgvUaqUw2cCncn2cyfLBuUrrAJun019aBPOE1OtOdkEBq9MgxmK-3gxzOqQueZSWk8T21Ztuc7YJzciBPWJ-8i0tWk1C8KtmACQyFKoAanXG6OnDNAhMnSHf4yh8eC6jouxPxCqmGfEwvQ4f34PSv5xiMYgTI2_05KFIN97UGYsIHaRHAB-HvF50gpFIGqha1Hs8cH1C6-vtl--bD04tL0oRCHHc0Ojclwi9fpJ43xdj73yR174R3LsrbVPVm5VURNae3-RWMIM5_qr7OgOEVPNn5htNMjdiqh-ykmq6XbbD6rh4fkbnI; visit=v=1&M; g_state={\"i_l\":0}; JSESSIONID=\"ajax:5281613647973076274\"; liap=true; li_at=AQEDAVKA8HoEvcmLAAABkk_lzW4AAAGTI4qYdU0Av4qHCx9nnIcfri_dugOyWH-jug3n-lLzpB3vKZZQ-RMo4okQ9csmMdfZsIPV89oV857Ik07bWaO4qZmBewE9OIbVtqEbGOb6qRYesWN1DRzrl-Pw; lang=\"v=2&lang=pt-br\"; AMCVS_14215E3D5995C57C0A495C55%40AdobeOrg=1; fptctx2=taBcrIH61PuCVH7eNCyH0FFaWZWIHTJWSYlBtG47cVsLU53FKRWCT9GxTIpd4ZBUGTHwE%252bxSocqgiRXFNsyiwxoCvUVAizHOOfUajmBl1AGYNpSUeCNCSFUtFZB0QKoFLWI0iyqLc5MPSccTKb%252btqMMPeVPnpiBdMU%252fFHLKj9NSF4%252f0fb%252bOpIQ4mpgFjNMpRyBL29OEMrqgE8m4iahF1c7rLRgvuTanJhQGYpUaKZWXeeOicTc12e8DmyM3C0tr2hPdCj%252byS065%252bVizstRNIsFDVO%252b99E3wsYJH%252bY8bbi0NrQMSZ1P39K%252bisyilfIkYEAb%252bS2FT3GEmpn17pKjCfhKr1wiz5%252bYirO4y9Xr8JsTI%253d; lidc=\"b=TB82:s=T:r=T:a=T:p=T:g=8448:u=9:x=1:i=1731276541:t=1731362941:v=2:sig=AQHqrOyb0qJRmUISlGS5iq8kO0NSgaE1\"; __cf_bm=DB9.Vyq5S1DJuO82XIhsGfKXmtPHNph7v8GzwVc_xCM-1731286460-1.0.1.1-Z4Aq3yl6A4H5rMmvdjXpKrH4Y649NtlORApFcBOy1tjUndechN5CvrtVeWPPHMcE8EWsrtl76QYpt8bjN3SeOQ")
+                .defaultHeader("Sec-Fetch-Dest", "empty")
+                .defaultHeader("Sec-Fetch-Mode", "cors")
+                .defaultHeader("Sec-Fetch-Site", "same-origin")
+                .defaultHeader("TE", "trailers")
                 .build();
     }
 
-    public String execRestClient(RestClient restClient, Integer start) {
-        // TODO: retornar para a conexao de fato
-//        return restClient
-//                .get()
-//                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c", start)
-//                .retrieve()
-//                .body(String.class);
-        return Utils.retornaJson("jsons/lista.json");
-    }
-
-    public String execRestClient(RestClient restClient, Integer start, Integer school) {
-        // TODO: retornar para a conexao de fato
-//        return restClient
-//                .get()
-//                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List({school}))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.dec2e0cf0d4c89523266f6e3b44cc87c", start, school)
-//                .retrieve()
-//                .body(String.class);
-
-        return Utils.retornaJson("jsons/lista.json");
+    public String execRestClient(RestClient restClient, Integer year, Integer start) {
+        return restClient
+                .get()
+                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:educationEndYear,value:List({year})),(key:educationStartYear,value:List({year})),(key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.8c4c84e04746a876c20b1eb6cd899df0", start, year)
+                .retrieve()
+                .body(String.class);
+//        return Utils.retornaJson("jsons/lista.json");
     }
 }

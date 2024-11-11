@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -27,9 +28,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<UserEntity> requestUser() throws JsonProcessingException {
-        RestClient restClient = listPeopleClient.getRestClient();
-        var result = listPeopleClient.execRestClient(restClient, 0);
+    public List<UserEntity> requestUser(Integer year, Integer start) throws JsonProcessingException {
+
+        RestClient restClient = listPeopleClient.getRestClient(year);
+        var result = listPeopleClient.execRestClient(restClient, year, start);
         ListPeopleDTO listPeopleDTO = objectMapper.readValue(result, ListPeopleDTO.class);
         List<ListPeopleDTO.UserData> list = listPeopleDTO.getIncluded().stream().filter(user -> user.getNavigationUrl() != null).toList();
 

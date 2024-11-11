@@ -33,7 +33,7 @@ public class EducationService {
     }
 
     public void requestEducation(UserEntity user) throws JsonProcessingException {
-        RestClient restClient = educationClient.getRestClient();
+        RestClient restClient = educationClient.getRestClient(user);
         var result = educationClient.execRestClient(restClient, user.getLinkedinId());
         EducationDTO educationDTO = objectMapper.readValue(result, EducationDTO.class);
         List<EducationDTO.EducationData> educationDataList = educationDTO.getIncluded().stream().filter(decorationType -> decorationType.getDecorationType() != null

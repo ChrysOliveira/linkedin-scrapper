@@ -32,13 +32,16 @@ public class LinkedinScrapperApplication {
     @Bean
     public CommandLineRunner demo() {
         return (args) -> {
-            List<UserEntity> userEntities = userService.requestUser();
-            if (!userEntities.isEmpty()) {
-                for (UserEntity userEntity : userEntities) {
-                    experienceService.requestExperience(userEntity);
-                    educationService.requestEducation(userEntity);
-                }
+            Integer year = 2000;
+            List<UserEntity> userEntities = userService.requestUser(year, 0);
+//            while (!userEntities.isEmpty() || year <= 2024) {
+            for (UserEntity userEntity : userEntities) {
+                experienceService.requestExperience(userEntity);
+                educationService.requestEducation(userEntity);
             }
+            Thread.sleep(2000);
+            userEntities = userService.requestUser(++year, userEntities.size());
+//            }
         };
     }
 }
