@@ -102,7 +102,7 @@ public class ExperienceMapper {
 //                .getCaption()
 //                .getText();
 
-        String location =  extracted.getComponentsInner().getEntityComponent().getCaption() != null ? extracted.getComponentsInner().getEntityComponent().getCaption().getText() : "";
+        String location = extracted.getComponentsInner().getEntityComponent().getCaption() != null ? extracted.getComponentsInner().getEntityComponent().getCaption().getText() : "";
 
         ExperienceDTO.ExperienceData experienceDataDetails = experienceDTO.getIncluded().stream()
                 .filter(decorationType -> decorationType.getDecorationType() != null
@@ -112,6 +112,14 @@ public class ExperienceMapper {
                 .findFirst()
                 .orElse(null);
 
+        if (experienceDataDetails == null) {
+            return null;
+        }
+
+        return getExperienceEntities(experienceDataDetails, userEntity, company, location);
+    }
+
+    private static List<ExperienceEntity> getExperienceEntities(ExperienceDTO.ExperienceData experienceDataDetails, UserEntity user, String company, String location) {
         List<ExperienceDTO.ExperienceData.Components.Elements> elements = experienceDataDetails.getComponents().getElements();
 
         List<ExperienceEntity> experienceEntities = new ArrayList<>();
@@ -124,45 +132,10 @@ public class ExperienceMapper {
                     .period(element.getComponentsInner().getEntityComponent().getCaption().getText())
                     .location(location)
                     .period(element.getComponentsInner().getEntityComponent().getCaption().getText())
-                    .workload( element.getComponentsInner().getEntityComponent().getSubtitle() != null ? element.getComponentsInner().getEntityComponent().getSubtitle().getText() : "")
+                    .workload(element.getComponentsInner().getEntityComponent().getSubtitle() != null ? element.getComponentsInner().getEntityComponent().getSubtitle().getText() : "")
+                    .user(user)
                     .build());
         });
-
-        StringBuilder description = new StringBuilder();
-
-        if (extracted.getComponentsInner().getEntityComponent().getSubComponents() != null) {
-            int lengthComponentsDescription = extracted
-                    .getComponentsInner()
-                    .getEntityComponent()
-                    .getSubComponents()
-                    .getComponentsLists()
-                    .size();
-
-            for (int i = 0; i < lengthComponentsDescription; i++) {
-                ExperienceDTO.ExperienceData.Components.Elements.ComponentsInner.EntityComponent.SubComponents.ComponentsList.InnerComponent.FixedListComp fixedListComp = extracted
-                        .getComponentsInner()
-                        .getEntityComponent()
-                        .getSubComponents()
-                        .getComponentsLists()
-                        .get(i)
-                        .getComponents()
-                        .getFixedListComp();
-                List<ExperienceDTO.ExperienceData.Components.Elements.ComponentsInner.EntityComponent.SubComponents.ComponentsList.InnerComponent.FixedListComp.InnerComponentFixedList> components = null;
-
-                if (fixedListComp != null) {
-                    components = fixedListComp.getComponents();
-                }
-                if (components != null) {
-                    description.append(components
-                            .get(0)
-                            .getComponents()
-                            .getTextComponent()
-                            .getText()
-                            .getText());
-                }
-            }
-        }
-
         return experienceEntities;
     }
 }

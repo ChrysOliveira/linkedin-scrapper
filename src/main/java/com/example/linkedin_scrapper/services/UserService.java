@@ -27,19 +27,17 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    // TODO: remover teste
-    public void blabla() throws JsonProcessingException {
+    public List<UserEntity> requestUser() throws JsonProcessingException {
         RestClient restClient = listPeopleClient.getRestClient();
         var result = listPeopleClient.execRestClient(restClient, 0);
         ListPeopleDTO listPeopleDTO = objectMapper.readValue(result, ListPeopleDTO.class);
         List<ListPeopleDTO.UserData> list = listPeopleDTO.getIncluded().stream().filter(user -> user.getNavigationUrl() != null).toList();
 
-        for (ListPeopleDTO.UserData userData : list) {
-            UserEntity userEntity = userMapper.UserDataToUserEntity(userData);
-            userRepository.save(userEntity);
+        List<UserEntity> userEntities = list.stream().map(userMapper::UserDataToUserEntity).toList();
+
+        if (!userEntities.isEmpty()) {
+            userRepository.saveAll(userEntities);
         }
-
-        System.out.println(list);
+        return userEntities;
     }
-
 }

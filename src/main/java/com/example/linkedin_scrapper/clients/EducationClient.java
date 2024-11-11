@@ -12,7 +12,8 @@ public class EducationClient implements IClient{
     }
 
     public String execRestClient(RestClient restClient, String linkedinId){
-        return Utils.retornaJson("jsons/education.json");
+//        return Utils.retornaJson("jsons/education.json");
         //return Utils.retornaJson("jsons/experience_muitaslistas.json");
+        return Utils.retornaJson("jsons/education_chrys.json");
     }
 }

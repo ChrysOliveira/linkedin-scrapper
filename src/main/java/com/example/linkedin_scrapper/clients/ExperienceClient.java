@@ -7,13 +7,14 @@ import org.springframework.web.client.RestClient;
 @Component
 public class ExperienceClient implements IClient {
     @Override
-    public RestClient getRestClient(){
+    public RestClient getRestClient() {
         return RestClient.builder().build();
     }
 
-    public String execRestClient(RestClient restClient, String linkedinId){
+    public String execRestClient(RestClient restClient, String linkedinId) {
 //        return Utils.retornaJson("jsons/experience.json");
 //        return Utils.retornaJson("jsons/experience_muitaslistas.json");
-        return Utils.retornaJson("jsons/julio.json");
+//        return Utils.retornaJson("jsons/julio.json");
+        return Utils.retornaJson("jsons/antonio_eduardo.json");
     }
 }

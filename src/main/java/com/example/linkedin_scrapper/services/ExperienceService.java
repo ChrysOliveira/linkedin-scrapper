@@ -4,6 +4,7 @@ import com.example.linkedin_scrapper.clients.ExperienceClient;
 import com.example.linkedin_scrapper.domains.DTOs.ExperienceDTO;
 import com.example.linkedin_scrapper.domains.DTOs.ListPeopleDTO;
 import com.example.linkedin_scrapper.domains.entities.ExperienceEntity;
+import com.example.linkedin_scrapper.domains.entities.UserEntity;
 import com.example.linkedin_scrapper.domains.mapper.ExperienceMapper;
 import com.example.linkedin_scrapper.repositories.ExperienceRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -27,10 +28,13 @@ public class ExperienceService {
         this.experienceMapper = experienceMapper;
     }
 
-    public void requestExperience() throws JsonProcessingException {
+    public void requestExperience(UserEntity user) throws JsonProcessingException {
         RestClient restClient = experienceClient.getRestClient();
-        var result = experienceClient.execRestClient(restClient, "");
+
+        var result = experienceClient.execRestClient(restClient, user.getLinkedinId());
+
         ExperienceDTO experienceDTO = objectMapper.readValue(result, ExperienceDTO.class);
+
         ExperienceDTO.ExperienceData experienceData = experienceDTO.getIncluded().stream()
                 .filter(decorationType -> decorationType.getDecorationType() != null
                         && decorationType.getDecorationType().equals("LINE_SEPARATED"))
@@ -39,15 +43,15 @@ public class ExperienceService {
 
         for (ExperienceDTO.ExperienceData.Components.Elements element : experienceData.getComponents().getElements()) {
             if (element.getComponentsInner().getEntityComponent().getMetadata() != null) {
-                ExperienceEntity experienceEntity = experienceMapper.ExperienceDataToExperienceEntitySingleTitle(element, null);
+                ExperienceEntity experienceEntity = experienceMapper.ExperienceDataToExperienceEntitySingleTitle(element, user);
                 experienceRepository.save(experienceEntity);
             } else {
-                List<ExperienceEntity> experienceEntities = experienceMapper.ExperienceDataToExperienceEntityMultiTitle(experienceDTO, element, null);
+                List<ExperienceEntity> experienceEntities = experienceMapper.ExperienceDataToExperienceEntityMultiTitle(experienceDTO, element, user);
+                if (experienceEntities == null) {
+                    continue;
+                }
                 experienceRepository.saveAll(experienceEntities);
             }
         }
-
-        System.out.println(experienceData);
     }
-
 }
