@@ -1,10 +1,12 @@
 package com.example.linkedin_scrapper.clients;
 
 import com.example.linkedin_scrapper.utils.Utils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
 @Component
+@Slf4j
 public class ListPeopleClient {
     public RestClient getRestClient(Integer year) {
         return RestClient.builder()
@@ -29,9 +31,10 @@ public class ListPeopleClient {
     }
 
     public String execRestClient(RestClient restClient, Integer year, Integer start) {
+        log.info("execRestClient year: {} start: {}", year, start);
         return restClient
                 .get()
-                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:educationEndYear,value:List({year})),(key:educationStartYear,value:List({year})),(key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.8c4c84e04746a876c20b1eb6cd899df0", start, year)
+                .uri("https://www.linkedin.com/voyager/api/graphql?variables=(start:{start},origin:FACETED_SEARCH,query:(flagshipSearchIntent:ORGANIZATIONS_PEOPLE_ALUMNI,queryParameters:List((key:educationEndYear,value:List({year})),(key:educationStartYear,value:List({year})),(key:resultType,value:List(ORGANIZATION_ALUMNI)),(key:schoolFilter,value:List(11354076))),includeFiltersInResponse:false),count:12)&queryId=voyagerSearchDashClusters.8c4c84e04746a876c20b1eb6cd899df0", start, year, year)
                 .retrieve()
                 .body(String.class);
 //        return Utils.retornaJson("jsons/lista.json");
