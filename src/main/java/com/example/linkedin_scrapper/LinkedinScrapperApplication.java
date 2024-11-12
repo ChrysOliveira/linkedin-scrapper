@@ -34,27 +34,32 @@ public class LinkedinScrapperApplication {
     @Bean
     public CommandLineRunner demo() {
         return (args) -> {
-            Integer year = 2024;
+            Integer year = 2000;
+            Integer page = 0;
 
             log.info("Starting...");
 
-            List<UserEntity> userEntities = userService.requestUser(year, 0);
+            List<UserEntity> userEntities = userService.requestUser(year, page);
 
-//            while (year <= 2024) {
-//                while (!userEntities.isEmpty()) {
-            log.info("Found users: {}", userEntities);
-            for (UserEntity userEntity : userEntities) {
-                log.info("Retrieving info of user: {}", userEntity);
-                experienceService.requestExperience(userEntity);
-                Thread.sleep(1000);
-                educationService.requestEducation(userEntity);
+            while (year <= 2024) {
+                log.info("Extracting: Year {} Page {} ", year, page);
+                while (!userEntities.isEmpty()) {
+                    log.info("Found users: {}", userEntities);
+                    for (UserEntity userEntity : userEntities) {
+                        log.info("Retrieving info of user: {}", userEntity);
+                        experienceService.requestExperience(userEntity);
+                        Thread.sleep(1000);
+                        educationService.requestEducation(userEntity);
+                    }
+                    Thread.sleep(2000);
+
+                    log.info("Requesting new page");
+                    page += 12;
+                    userEntities = userService.requestUser(year, page);
+                }
+                page = 0;
+                userEntities = userService.requestUser(++year, page);
             }
-            log.info("Requesting new page");
-            Thread.sleep(2000);
-//            userEntities = userService.requestUser(year, userEntities.size());
-//                }
-//                userEntities = userService.requestUser(++year, 0);
-//            }
         };
     }
 }
